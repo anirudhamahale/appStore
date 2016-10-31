@@ -18,13 +18,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Top Charts" id="r9U-pz-9do"/>
+                    <tabBarItem key="tabBarItem" title="Top Charts" image="TopCharts" id="r9U-pz-9do"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TGP-zV-JNt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-633.5" y="819.5"/>
         </scene>
-        <!--Favorites View Controller-->
+        <!--Featured-->
         <scene sceneID="4pn-Yf-tPk">
             <objects>
                 <viewController storyboardIdentifier="FavoritesViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="0UU-QF-V0r" customClass="FavoritesViewController" customModule="AppStore" customModuleProvider="target" sceneMemberID="viewController">
@@ -37,7 +37,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="" systemItem="more" id="G9q-1z-jc0"/>
+                    <tabBarItem key="tabBarItem" title="Featured" image="Featured" id="G9q-1z-jc0"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XIj-1i-wd8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -56,13 +56,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Explore" id="ipz-Jd-pax"/>
+                    <tabBarItem key="tabBarItem" title="Explore" image="Explore" id="ipz-Jd-pax"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Af7-q4-EJ3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-163.5" y="819.5"/>
         </scene>
-        <!--Search-->
+        <!--Search View Controller-->
         <scene sceneID="DwL-oE-ect">
             <objects>
                 <viewController storyboardIdentifier="SearchViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="4q0-CV-vSs" customClass="SearchViewController" customModule="AppStore" customModuleProvider="target" sceneMemberID="viewController">
@@ -75,7 +75,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Search" id="1Kg-ld-dXC"/>
+                    <tabBarItem key="tabBarItem" systemItem="search" id="1Kg-ld-dXC"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9VS-TY-Udg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -84,7 +84,7 @@
         <!--Updates-->
         <scene sceneID="BiM-IM-y2M">
             <objects>
-                <viewController id="JZn-3u-exT" sceneMemberID="viewController">
+                <viewController id="JZn-3u-exT" customClass="UpdatesViewController" customModule="AppStore" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="E5I-fK-a1F"/>
                         <viewControllerLayoutGuide type="bottom" id="yGp-hI-cr6"/>
@@ -94,7 +94,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Updates" id="f4F-vV-N6K"/>
+                    <tabBarItem key="tabBarItem" title="Updates" image="Updates" id="f4F-vV-N6K"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ol2-Tx-b9N" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -111,11 +111,11 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="HGZ-i4-PKd" kind="relationship" relationship="viewControllers" id="7Qe-Fb-BH0"/>
+                        <segue destination="0UU-QF-V0r" kind="relationship" relationship="viewControllers" id="qcU-ek-2Fn"/>
                         <segue destination="MIO-7V-yLQ" kind="relationship" relationship="viewControllers" id="wnq-7b-TJG"/>
+                        <segue destination="HGZ-i4-PKd" kind="relationship" relationship="viewControllers" id="7Qe-Fb-BH0"/>
                         <segue destination="4q0-CV-vSs" kind="relationship" relationship="viewControllers" id="It4-yP-jdU"/>
                         <segue destination="JZn-3u-exT" kind="relationship" relationship="viewControllers" id="giV-cd-umT"/>
-                        <segue destination="0UU-QF-V0r" kind="relationship" relationship="viewControllers" id="qcU-ek-2Fn"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zS7-hZ-ehe" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -123,4 +123,10 @@
             <point key="canvasLocation" x="-633.5" y="49.5"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Explore" width="25" height="25"/>
+        <image name="Featured" width="25" height="24"/>
+        <image name="TopCharts" width="23" height="19"/>
+        <image name="Updates" width="23" height="23"/>
+    </resources>
 </document>
