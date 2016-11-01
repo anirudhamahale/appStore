@@ -55,8 +55,37 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="94" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="nWU-Us-Uf0">
-                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6ba-qA-agM">
+                                <rect key="frame" x="0.0" y="64" width="375" height="38"/>
+                                <subviews>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Ef8-tk-cye">
+                                        <rect key="frame" x="46" y="0.0" width="284" height="29"/>
+                                        <segments>
+                                            <segment title="Paid"/>
+                                            <segment title="Free"/>
+                                            <segment title="Top Grossing"/>
+                                        </segments>
+                                    </segmentedControl>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lHO-gS-cSj">
+                                        <rect key="frame" x="-1" y="37" width="376" height="1"/>
+                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="1" id="eKc-iy-C1D"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" secondItem="Ef8-tk-cye" secondAttribute="height" constant="10" id="4HG-ry-1v1"/>
+                                    <constraint firstItem="lHO-gS-cSj" firstAttribute="centerX" secondItem="6ba-qA-agM" secondAttribute="centerX" id="HDb-qO-10F"/>
+                                    <constraint firstItem="Ef8-tk-cye" firstAttribute="centerX" secondItem="6ba-qA-agM" secondAttribute="centerX" id="cyx-48-YJQ"/>
+                                    <constraint firstItem="Ef8-tk-cye" firstAttribute="top" secondItem="6ba-qA-agM" secondAttribute="top" id="gm9-M3-aLc"/>
+                                    <constraint firstItem="lHO-gS-cSj" firstAttribute="width" secondItem="6ba-qA-agM" secondAttribute="width" id="qA8-Nq-I7c"/>
+                                    <constraint firstAttribute="bottom" secondItem="lHO-gS-cSj" secondAttribute="bottom" id="zOk-ju-kXG"/>
+                                </constraints>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="90" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="nWU-Us-Uf0">
+                                <rect key="frame" x="0.0" y="102" width="375" height="516"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="TopChartsTableViewCell" rowHeight="94" id="wEo-i5-EFg" customClass="TopChartsTableViewCell" customModule="AppStore" customModuleProvider="target">
@@ -181,15 +210,48 @@ Purchase</string>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="nWU-Us-Uf0" firstAttribute="top" secondItem="6ba-qA-agM" secondAttribute="bottom" constant="20" id="BWy-Oj-kGe"/>
                             <constraint firstAttribute="trailing" secondItem="nWU-Us-Uf0" secondAttribute="trailing" id="TkE-xc-c4Y"/>
-                            <constraint firstItem="nWU-Us-Uf0" firstAttribute="top" secondItem="1sH-cS-Aw3" secondAttribute="bottom" id="Xo9-ey-iqA"/>
+                            <constraint firstItem="6ba-qA-agM" firstAttribute="centerX" secondItem="xJZ-0Q-oVU" secondAttribute="centerX" id="UBi-R3-3zc"/>
+                            <constraint firstItem="nWU-Us-Uf0" firstAttribute="top" secondItem="1sH-cS-Aw3" secondAttribute="bottom" constant="100" id="Xo9-ey-iqA"/>
+                            <constraint firstItem="6ba-qA-agM" firstAttribute="top" secondItem="1sH-cS-Aw3" secondAttribute="bottom" id="buv-g5-QWS"/>
                             <constraint firstItem="zCW-Ln-Xw2" firstAttribute="top" secondItem="nWU-Us-Uf0" secondAttribute="bottom" id="c1M-7C-qoG"/>
+                            <constraint firstItem="nWU-Us-Uf0" firstAttribute="top" secondItem="6ba-qA-agM" secondAttribute="bottom" id="fV1-nn-ZVs"/>
                             <constraint firstItem="nWU-Us-Uf0" firstAttribute="leading" secondItem="xJZ-0Q-oVU" secondAttribute="leading" id="fpg-Wh-wJS"/>
+                            <constraint firstItem="6ba-qA-agM" firstAttribute="width" secondItem="xJZ-0Q-oVU" secondAttribute="width" id="hrq-4F-jKs"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="BWy-Oj-kGe"/>
+                                <exclude reference="Xo9-ey-iqA"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" title="Top Charts" id="BAK-d1-djg">
+                        <barButtonItem key="leftBarButtonItem" style="plain" id="X7K-iM-RAT">
+                            <view key="customView" contentMode="scaleToFill" id="9HA-N8-Dj9">
+                                <rect key="frame" x="16" y="5" width="82" height="33"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Categories" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3i3-0p-Idy">
+                                        <rect key="frame" x="-1" y="6" width="84" height="21"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.16078431369999999" green="0.47843137250000001" blue="0.99607843139999996" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="3i3-0p-Idy" firstAttribute="centerY" secondItem="9HA-N8-Dj9" secondAttribute="centerY" id="MBD-JA-uPC"/>
+                                    <constraint firstItem="3i3-0p-Idy" firstAttribute="centerX" secondItem="9HA-N8-Dj9" secondAttribute="centerX" id="zA9-Xg-CbC"/>
+                                </constraints>
+                            </view>
+                            <color key="tintColor" red="0.16078431369999999" green="0.47843137250000001" blue="0.99607843139999996" alpha="1" colorSpace="calibratedRGB"/>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" image="More" id="1GJ-zO-J6T"/>
                     </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
                         <outlet property="topChartsTableView" destination="nWU-Us-Uf0" id="bbE-kq-hpO"/>
                     </connections>

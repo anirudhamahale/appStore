@@ -15,6 +15,10 @@ class TopChartsViewController: UIViewController, UITableViewDataSource, UITableV
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        let navBar = navigationController!.navigationBar
+        navBar.setBackgroundImage(UIImage(), forBarMetrics: .Default)
+        navBar.shadowImage = UIImage()
+        
         data = [
             AppDetails(name: "Clash of Clans", category: .Games, image: "angrybirdsspace", downloads: "50000", free: false, price: "250"),
             AppDetails(name: "Clash of Royals", category: .Games, image: "clashroyale", downloads: "10091", free: true, price: "150")
@@ -50,7 +54,7 @@ class TopChartsViewController: UIViewController, UITableViewDataSource, UITableV
         cell.appButton.setTitle("₹ " + data[indexPath.row].price, forState: .Normal)
         cell.appButton.backgroundColor = UIColor.clearColor()
         cell.appButton.layer.cornerRadius = 5
-        cell.appButton.layer.borderWidth = 2
+        cell.appButton.layer.borderWidth = 1
         cell.appButton.layer.borderColor = UIColor(netHex: 0x297AFE).CGColor
     }
 
