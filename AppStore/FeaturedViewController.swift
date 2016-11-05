@@ -11,6 +11,7 @@ import UIKit
 class FeaturedViewController: UIViewController {
 
     @IBOutlet weak var featuredTableView: UITableView!
+    @IBOutlet weak var headerViewTopSpace: NSLayoutConstraint!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -59,6 +60,18 @@ extension FeaturedViewController: UICollectionViewDataSource, UICollectionViewDe
         cell.appName.text = "Clash Of Royale"
         cell.appCategory.text = "Games"
         return cell
+    }
+}
+
+extension FeaturedViewController {
+    func scrollViewDidScroll(scrollView: UIScrollView) {
+        if scrollView.contentOffset.y <= 68 {
+            headerViewTopSpace.constant = -scrollView.contentOffset.y
+            self.view.layoutIfNeeded()
+        } else {
+            headerViewTopSpace.constant = 0.0
+            self.view.layoutIfNeeded()
+        }
     }
 }
 
