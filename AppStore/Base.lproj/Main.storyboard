@@ -428,7 +428,7 @@ Purchase</string>
             </objects>
             <point key="canvasLocation" x="-1107.5" y="840.5"/>
         </scene>
-        <!--Categories View Controller-->
+        <!--Categories-->
         <scene sceneID="w5F-Sh-IVI">
             <objects>
                 <viewController storyboardIdentifier="CategoriesViewController" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="HGZ-i4-PKd" customClass="CategoriesViewController" customModule="AppStore" customModuleProvider="target" sceneMemberID="viewController">
@@ -444,17 +444,16 @@ Purchase</string>
                                 <rect key="frame" x="0.0" y="64" width="375" height="554"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CategoriesTableViewCell" rowHeight="60" id="LRy-Gx-yzS" customClass="CategoriesTableViewCell" customModule="AppStore" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="60"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CategoriesTableViewCell" rowHeight="80" id="LRy-Gx-yzS" customClass="CategoriesTableViewCell" customModule="AppStore" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="LRy-Gx-yzS" id="uio-uD-g0t">
-                                            <rect key="frame" x="0.0" y="0.0" width="342" height="59"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="342" height="79"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="E3o-0P-T23">
-                                                    <rect key="frame" x="10" y="5" width="50" height="50"/>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="clashroyale" translatesAutoresizingMaskIntoConstraints="NO" id="E3o-0P-T23">
+                                                    <rect key="frame" x="10" y="12" width="56" height="56"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="50" id="ORV-TT-EKV"/>
                                                         <constraint firstAttribute="width" secondItem="E3o-0P-T23" secondAttribute="height" multiplier="1:1" id="XYh-hi-w2Y"/>
                                                     </constraints>
                                                     <userDefinedRuntimeAttributes>
@@ -464,8 +463,8 @@ Purchase</string>
                                                     </userDefinedRuntimeAttributes>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Games" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cyA-Wb-L9o">
-                                                    <rect key="frame" x="68" y="19" width="266" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <rect key="frame" x="74" y="30" width="260" height="20"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -478,6 +477,9 @@ Purchase</string>
                                                 <constraint firstItem="E3o-0P-T23" firstAttribute="leading" secondItem="uio-uD-g0t" secondAttribute="leading" constant="10" id="zXl-1w-Dea"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <constraints>
+                                            <constraint firstItem="E3o-0P-T23" firstAttribute="height" secondItem="LRy-Gx-yzS" secondAttribute="height" multiplier="0.7" id="acd-SW-EhJ"/>
+                                        </constraints>
                                         <connections>
                                             <outlet property="appIcon" destination="E3o-0P-T23" id="gcT-pb-OX6"/>
                                             <outlet property="appName" destination="cyA-Wb-L9o" id="3dR-yv-Vek"/>
@@ -498,7 +500,7 @@ Purchase</string>
                             <constraint firstItem="f6v-dg-bCS" firstAttribute="top" secondItem="i0k-3C-Lm0" secondAttribute="bottom" id="fY6-NV-PDX"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="obi-KG-Uu3"/>
+                    <navigationItem key="navigationItem" title="Categories" id="obi-KG-Uu3"/>
                     <connections>
                         <outlet property="categoriesTableView" destination="i0k-3C-Lm0" id="Sws-pj-Gu8"/>
                     </connections>
