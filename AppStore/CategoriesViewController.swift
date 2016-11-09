@@ -46,11 +46,6 @@ extension CategoriesViewController: UITableViewDelegate, UITableViewDataSource {
         cell.appName.text = ""
         return cell
     }
-    
-    func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        switch section {}
-    }
-
 }
 
 
