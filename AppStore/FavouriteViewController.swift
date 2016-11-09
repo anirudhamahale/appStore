@@ -17,12 +17,12 @@ class FavouriteViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        UIApplication.sharedApplication().statusBarStyle = .LightContent
+//        UIApplication.sharedApplication().statusBarStyle = .LightContent
     }
     
     override func viewWillDisappear(animated: Bool) {
         super.viewWillDisappear(animated)
-        UIApplication.sharedApplication().statusBarStyle = UIStatusBarStyle.Default
+//        UIApplication.sharedApplication().statusBarStyle = UIStatusBarStyle.Default
     }
 
     @IBAction func editButtonPressed(sender: AnyObject) {
