@@ -46,6 +46,14 @@ extension CategoriesViewController: UITableViewDelegate, UITableViewDataSource {
         cell.appName.text = ""
         return cell
     }
+    
+    func scrollViewDidScroll(scrollView: UIScrollView) {
+        if scrollView.contentOffset.y <= 68 {
+        
+        } else {
+            
+        }
+    }
 }
 
 

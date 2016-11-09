@@ -31,7 +31,7 @@ extension FeaturedViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return 10
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -65,7 +65,8 @@ extension FeaturedViewController: UICollectionViewDataSource, UICollectionViewDe
 
 extension FeaturedViewController {
     func scrollViewDidScroll(scrollView: UIScrollView) {
-        if scrollView.contentOffset.y <= 68 {
+        print(scrollView.contentOffset.y)
+        if scrollView.contentOffset.y >= 0 {
             headerViewTopSpace.constant = -scrollView.contentOffset.y
             self.view.layoutIfNeeded()
         } else {

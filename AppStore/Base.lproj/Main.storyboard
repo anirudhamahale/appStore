@@ -4,7 +4,6 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
@@ -158,8 +157,8 @@
                         <constraints>
                             <constraint firstItem="4zH-sf-xBn" firstAttribute="leading" secondItem="c6e-p2-d05" secondAttribute="leading" id="2sT-4c-vIh"/>
                             <constraint firstItem="Q5G-96-cW2" firstAttribute="top" secondItem="u2X-K9-VMM" secondAttribute="bottom" id="3Sv-Zy-Tob"/>
-                            <constraint firstItem="4zH-sf-xBn" firstAttribute="top" secondItem="c6e-p2-d05" secondAttribute="topMargin" constant="64" id="5AO-zI-cC1"/>
                             <constraint firstAttribute="trailing" secondItem="4zH-sf-xBn" secondAttribute="trailing" id="7GZ-WC-5NH"/>
+                            <constraint firstItem="4zH-sf-xBn" firstAttribute="top" secondItem="u2X-K9-VMM" secondAttribute="bottom" id="dXx-XX-ij9"/>
                             <constraint firstItem="Q5G-96-cW2" firstAttribute="centerX" secondItem="c6e-p2-d05" secondAttribute="centerX" id="rxv-tN-zOI"/>
                             <constraint firstItem="Q5G-96-cW2" firstAttribute="width" secondItem="c6e-p2-d05" secondAttribute="width" id="wxh-0X-Gdp"/>
                             <constraint firstItem="25k-aJ-IkS" firstAttribute="top" secondItem="4zH-sf-xBn" secondAttribute="bottom" id="xI9-Aw-fmg"/>
