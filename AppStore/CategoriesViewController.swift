@@ -12,7 +12,7 @@ class CategoriesViewController: UIViewController {
 
     @IBOutlet weak var categoriesTableView: UITableView!
     
-    let categories = [["Games","Photo & Video","Entertainment"],["Books","Business","Catalogues","Education","Entertaintment","Developer Tools","Life Style", "Health & Fitness", "Medical", "Weather", "Travel", "Videos", "Utilities"]]
+    let categories = [["Games","Photo & Video","Entertainment"],["Books","Business","Catalogues","Education","Entertaintment","Developer Tools","Life Style", "Health & Fitness", "Medical", "Weather", "Travel", "Videos", "Utilities", "Sports", "Photography", "Social Networking", "Productivity"]]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -62,9 +62,9 @@ extension CategoriesViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         switch section {
         case 0:
-            return "Popular"
+            return "POPULAR"
         case 1:
-            return "All Categories"
+            return "ALL CATEGORIES"
         default:
             return ""
         }
