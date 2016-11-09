@@ -18,6 +18,11 @@ class FeaturedViewController: UIViewController {
 
         // Do any additional setup after loading the view.
     }
+    
+    @IBAction func favouriteButtonPressed(sender: AnyObject) {
+        let vc = self.storyboard?.instantiateViewControllerWithIdentifier("FavouriteViewController") as! FavouriteViewController
+        self.presentViewController(vc, animated: true, completion: nil)
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
