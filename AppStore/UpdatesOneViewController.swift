@@ -60,7 +60,10 @@ extension UpdatesOneViewController: UITableViewDataSource, UITableViewDelegate {
     
     func configureCell(cell: DetailUpdateTableViewCell) {
         if all {
-            cell.appIcon.image = UIImage(named: "")
+            cell.appIcon.image = UIImage(named: "dine")
+            cell.appName.text = "dine"
+            cell.companyName.text = "dine Pvt Ltd"
+            cell.versionLabel.text = "Version 1.1"
             cell.appButton.backgroundColor = UIColor.clearColor()
             cell.appButton.layer.cornerRadius = 5
             cell.appButton.layer.borderWidth = 1
@@ -68,6 +71,10 @@ extension UpdatesOneViewController: UITableViewDataSource, UITableViewDelegate {
             cell.appButton.setTitle("Open", forState: .Normal)
             cell.appButton.setImage(nil, forState: .Normal)
         } else {
+            cell.appIcon.image = UIImage(named: "starwars")
+            cell.appName.text = "Star Wars"
+            cell.companyName.text = "Star Wars Pvt Ltd"
+            cell.versionLabel.text = "Version 2.1"
             let image = UIImage(named: "Cloud_Download")
             cell.appButton.setImage(image, forState: .Normal)
             cell.appButton.setTitle("", forState: .Normal)

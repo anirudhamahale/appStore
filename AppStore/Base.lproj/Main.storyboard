@@ -139,7 +139,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Q5G-96-cW2" userLabel="headerView">
                                 <rect key="frame" x="0.0" y="64" width="375" height="178"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="250" image="badland" translatesAutoresizingMaskIntoConstraints="NO" id="vHA-aW-d0W">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="250" image="clashRoyaleBanner" translatesAutoresizingMaskIntoConstraints="NO" id="vHA-aW-d0W">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="178"/>
                                     </imageView>
                                 </subviews>
@@ -680,7 +680,7 @@ Purchase</string>
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="89"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="clashroyale" translatesAutoresizingMaskIntoConstraints="NO" id="zxR-rZ-yUr">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="deathworm" translatesAutoresizingMaskIntoConstraints="NO" id="zxR-rZ-yUr">
                                                     <rect key="frame" x="8" y="13" width="63" height="63"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="zxR-rZ-yUr" secondAttribute="height" multiplier="1:1" id="ya9-Ir-0r4"/>
@@ -818,7 +818,7 @@ Purchase</string>
                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="clashroyale" translatesAutoresizingMaskIntoConstraints="NO" id="zbl-BD-UxR">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dine" translatesAutoresizingMaskIntoConstraints="NO" id="zbl-BD-UxR">
                                                     <rect key="frame" x="8" y="13" width="63" height="63"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="zbl-BD-UxR" secondAttribute="height" multiplier="1:1" id="1hS-8m-fJw"/>
@@ -986,7 +986,9 @@ Purchase</string>
         <image name="Search" width="22" height="23"/>
         <image name="TopCharts" width="23" height="19"/>
         <image name="Updates" width="19" height="25"/>
-        <image name="badland" width="460" height="215"/>
+        <image name="clashRoyaleBanner" width="697" height="338"/>
         <image name="clashroyale" width="175" height="175"/>
+        <image name="deathworm" width="175" height="175"/>
+        <image name="dine" width="175" height="175"/>
     </resources>
 </document>
