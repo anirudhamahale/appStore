@@ -39,11 +39,9 @@ class AppDetailViewController: UIViewController {
 //        sectionView.contentView.backgroundColor = UIColor.yellowColor()
         
         let segmentController: UISegmentedControl = {
-            let view = UISegmentedControl()
+            let items = ["Details","Reviews","Related"]
+            let view = UISegmentedControl(items: items)
             view.frame = CGRect(x: 10, y: 10, width: sectionView.contentView.bounds.width - 20, height: sectionView.contentView.bounds.height - 20)
-            view.setTitle("Details", forSegmentAtIndex: 0)
-            view.setTitle("Reviews", forSegmentAtIndex: 1)
-            view.setTitle("Related", forSegmentAtIndex: 2)
             view.tintColor = UIColor.darkGrayColor()
             view.selectedSegmentIndex = 0
             view.setEnabled(true, forSegmentAtIndex: 0)
