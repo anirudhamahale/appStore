@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8FB049211DD834470001AAFB /* AppDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FB049201DD834470001AAFB /* AppDetailViewController.swift */; };
+		8FB049231DD8374F0001AAFB /* AppDetailTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FB049221DD8374F0001AAFB /* AppDetailTVC.swift */; };
 		BC0BB36C1DC75D5B0003EE02 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC0BB36B1DC75D5B0003EE02 /* AppDelegate.swift */; };
 		BC0BB36E1DC75D5B0003EE02 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC0BB36D1DC75D5B0003EE02 /* ViewController.swift */; };
 		BC0BB3711DC75D5C0003EE02 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC0BB36F1DC75D5C0003EE02 /* Main.storyboard */; };
@@ -29,6 +31,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8FB049201DD834470001AAFB /* AppDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDetailViewController.swift; sourceTree = "<group>"; };
+		8FB049221DD8374F0001AAFB /* AppDetailTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDetailTVC.swift; sourceTree = "<group>"; };
 		BC0BB3681DC75D5A0003EE02 /* AppStore.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppStore.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC0BB36B1DC75D5B0003EE02 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BC0BB36D1DC75D5B0003EE02 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -105,6 +109,7 @@
 			children = (
 				BCADB4C11DC8813200425D99 /* TopChartsTableViewCell.swift */,
 				BC7B44ED1DCC883900EFF968 /* CategoriesTableViewCell.swift */,
+				8FB049221DD8374F0001AAFB /* AppDetailTVC.swift */,
 				BC2D9B931DC9C84600F07007 /* FeaturedTableViewCell.swift */,
 				BC5C5DB51DD6F87500005B42 /* UpdatesTableViewCell.swift */,
 			);
@@ -116,6 +121,7 @@
 			children = (
 				BC0BB3851DC763580003EE02 /* UpdatesViewController.swift */,
 				BC0BB37F1DC7632B0003EE02 /* TopChartsViewController.swift */,
+				8FB049201DD834470001AAFB /* AppDetailViewController.swift */,
 				BCBA2A2A1DD315370094546C /* FavouriteViewController.swift */,
 				BC0BB3831DC7634B0003EE02 /* SearchViewController.swift */,
 				BC0BB3811DC7633C0003EE02 /* CategoriesViewController.swift */,
@@ -238,6 +244,8 @@
 				BC0BB3821DC7633C0003EE02 /* CategoriesViewController.swift in Sources */,
 				BC33760F1DCB1E1300079C79 /* FeaturedCollectionViewCell.swift in Sources */,
 				BC0BB36C1DC75D5B0003EE02 /* AppDelegate.swift in Sources */,
+				8FB049211DD834470001AAFB /* AppDetailViewController.swift in Sources */,
+				8FB049231DD8374F0001AAFB /* AppDetailTVC.swift in Sources */,
 				BC0BB3801DC7632B0003EE02 /* TopChartsViewController.swift in Sources */,
 				BC7B44EE1DCC883900EFF968 /* CategoriesTableViewCell.swift in Sources */,
 				BCADB4CC1DC8842800425D99 /* AppData.swift in Sources */,

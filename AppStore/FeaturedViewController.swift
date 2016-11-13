@@ -70,8 +70,6 @@ extension FeaturedViewController: UICollectionViewDataSource, UICollectionViewDe
 
 extension FeaturedViewController {
     func scrollViewDidScroll(scrollView: UIScrollView) {
-//        print(scrollView.contentOffset.y)
-        print(featuredTableView.contentOffset.y)
         if featuredTableView.contentOffset.y >= 0 {
             headerViewTopSpace.constant = -featuredTableView.contentOffset.y
             self.view.layoutIfNeeded()
