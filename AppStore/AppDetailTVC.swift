@@ -8,7 +8,6 @@
 
 import UIKit
 class SubltitleTableCell: UITableViewCell {
-    
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
 }
@@ -31,4 +30,10 @@ class CustomerReviewsTableCell: UITableViewCell {
     @IBOutlet weak var reviewTitle: UILabel!
     @IBOutlet weak var user_date: UILabel!
     @IBOutlet weak var review: UILabel!
+}
+
+class RelatedTableCell: UITableViewCell {
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var appsCollection: UICollectionView!
+
 }

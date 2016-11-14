@@ -12,3 +12,11 @@ class ScreenShotsCVC: UICollectionViewCell {
     
     @IBOutlet weak var screen: UIImageView!
 }
+
+class RelatedCollectionCell: UICollectionViewCell {
+    
+    @IBOutlet weak var appIcon: UIImageView!
+    @IBOutlet weak var appName: UILabel!
+    @IBOutlet weak var category: UILabel!
+
+}

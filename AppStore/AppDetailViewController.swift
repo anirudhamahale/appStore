@@ -89,7 +89,7 @@ extension AppDetailViewController: UITableViewDelegate, UITableViewDataSource {
             return section == 2 ? 5:1
         case 2:
             /********************* Related Page *********************/
-            return 0
+            return 5
         default:
             return 0
         }
@@ -123,8 +123,7 @@ extension AppDetailViewController: UITableViewDelegate, UITableViewDataSource {
             
         case 2:
             /********************* Related Page *********************/
-            return 0
-            
+            return 220
         default:
             return 0
         }
@@ -173,7 +172,10 @@ extension AppDetailViewController: UITableViewDelegate, UITableViewDataSource {
             }
         case 2:
             /********************* Related Page *********************/
-            return UITableViewCell()
+            let cell = tableView.dequeueReusableCellWithIdentifier("RelatedTableCell") as! RelatedTableCell
+            cell.appsCollection.dataSource = self
+            cell.appsCollection.delegate = self
+            return cell
             
         default:
             return UITableViewCell()
@@ -194,15 +196,21 @@ extension AppDetailViewController: UICollectionViewDataSource, UICollectionViewD
     }
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("ScreenShotsCVC", forIndexPath: indexPath) as! ScreenShotsCVC
-        cell.screen.image = UIImage(named: "clashOfClansVertical")
-        return cell
+        switch segmentIndex {
+        case 0:
+            let cell = collectionView.dequeueReusableCellWithReuseIdentifier("ScreenShotsCVC", forIndexPath: indexPath) as! ScreenShotsCVC
+            cell.screen.image = UIImage(named: "clashOfClansVertical")
+            return cell
+        default:
+            let cell = collectionView.dequeueReusableCellWithReuseIdentifier("RelatedCollectionCell", forIndexPath: indexPath) as! RelatedCollectionCell
+            return cell
+        }
+        
     }
 }
 
 extension AppDetailViewController: UIScrollViewDelegate {
     func scrollViewDidScroll(scrollView: UIScrollView) {
-        print(appDetailTV.contentOffset.y)
         if appDetailTV.contentOffset.y >= 125 {
             segmentControllerTopSpace.constant = 0
         } else if appDetailTV.contentOffset.y < 125 {
@@ -236,15 +244,15 @@ extension AppDetailViewController {
         }
     }
     
-    func configureReviewPageCell(cell: UITableViewCell, indexPath: NSIndexPath) {
-        switch indexPath.section {
-        case 0:
-            let cell = cell as! RatingReviewTableCell
-            
-        default:
-            break
-        }
-    }
+//    func configureReviewPageCell(cell: UITableViewCell, indexPath: NSIndexPath) {
+//        switch indexPath.section {
+//        case 0:
+//            let cell = cell as! RatingReviewTableCell
+//            
+//        default:
+//            break
+//        }
+//    }
     
     /*
     func calculateLines(label: UILabel) {
