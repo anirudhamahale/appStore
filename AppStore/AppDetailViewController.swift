@@ -170,10 +170,10 @@ extension AppDetailViewController {
         case 3:
             cell.titleLabel.numberOfLines = 2
             
-            let text1 = NSMutableAttributedString(string: "02-Nov-2016")
-            text1.addAttribute(NSForegroundColorAttributeName, value: UIColor.yellowColor(), range: NSRange(location:0,length:11))
+            let text1 = NSMutableAttributedString(string: "What's New\n02-Nov-2016")
+            text1.addAttribute(NSForegroundColorAttributeName, value: UIColor.darkGrayColor(), range: NSRange(location:10,length:12))
             
-            cell.titleLabel.text = "What's New\n\(text1)"
+            cell.titleLabel.attributedText = text1
             cell.descriptionLabel.text = "* This version contains stability improvements and general bug fixes."
         default:
             break
