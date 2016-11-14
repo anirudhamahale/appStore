@@ -7,8 +7,14 @@
 //
 
 import UIKit
-class EditorsNotesTableCell: UITableViewCell {
+class SubltitleTableCell: UITableViewCell {
     
     @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var noteLabel: UILabel!
+    @IBOutlet weak var descriptionLabel: UILabel!
+}
+
+class ScreensTableCell: UITableViewCell {
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var imageCollections: UICollectionView!
+    
 }
