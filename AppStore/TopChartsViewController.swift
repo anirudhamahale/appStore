@@ -41,6 +41,7 @@ class TopChartsViewController: UIViewController, UITableViewDataSource, UITableV
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        performSegueWithIdentifier("showApp", sender: nil)
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
     }
     

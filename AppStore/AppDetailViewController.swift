@@ -20,22 +20,9 @@ class AppDetailViewController: UIViewController {
     @IBOutlet weak var appButton: UIButton!
     
     @IBOutlet weak var appDetailTV: UITableView!
+    @IBOutlet weak var segmentController: UISegmentedControl!
     
-    lazy var segmentController: UISegmentedControl = {
-        let view = UISegmentedControl(items: ["Details","Reviews","Related"])
-        view.tintColor = UIColor.darkGrayColor()
-        view.selectedSegmentIndex = 0
-        view.setEnabled(true, forSegmentAtIndex: 0)
-        return view
-    }()
-    
-    lazy var lineView: UIView = {
-        let view = UIView()
-        view.backgroundColor = UIColor(netHex: 0xf0f0f0)
-        view.alpha = 0.7
-        return view
-    }()
-    
+    @IBOutlet weak var segmentControllerTopSpace: NSLayoutConstraint!
     var segmentIndex = 0
     
     override func viewDidLoad() {
@@ -43,73 +30,69 @@ class AppDetailViewController: UIViewController {
         segmentController.addTarget(self, action: #selector(AppDetailViewController.changeValueForSegment(_:)), forControlEvents: .ValueChanged)
     }
 
-    func createSectionHeaderView(view: UIView) {
-        let sectionView = view as! UITableViewHeaderFooterView
-        sectionView.contentView.backgroundColor = UIColor.whiteColor()
+//    func createSectionHeaderView(view: UIView) {
+//        let sectionView = view as! UITableViewHeaderFooterView
+//        sectionView.contentView.backgroundColor = UIColor.whiteColor()
+//        sectionView.contentView.alpha = 0.8
+//        segmentController.frame = CGRect(x: 10, y: 10, width: sectionView.contentView.bounds.width - 20, height: sectionView.contentView.bounds.height - 20)
+//        lineView.frame = CGRect(x: 0, y: sectionView.contentView.bounds.height - 1, width: sectionView.contentView.bounds.width, height: 1)
+//        
+//        sectionView.contentView.addSubview(segmentController)
+//        sectionView.contentView.addSubview(lineView)
+//    }
+    
+    @IBAction func changeValueForSegment(sender: UISegmentedControl) {
+        segmentIndex = sender.selectedSegmentIndex
         
-        segmentController.frame = CGRect(x: 10, y: 5, width: sectionView.contentView.bounds.width - 20, height: sectionView.contentView.bounds.height - 10)
-        lineView.frame = CGRect(x: 0, y: sectionView.contentView.bounds.height - 1, width: sectionView.contentView.bounds.width, height: 1)
-        
-        sectionView.contentView.addSubview(segmentController)
-        sectionView.contentView.addSubview(lineView)
+        UIView.transitionWithView(appDetailTV, duration: 0.3, options: [.TransitionCrossDissolve], animations: {
+            self.appDetailTV.reloadData()
+            }, completion: nil)
     }
     
-    func changeValueForSegment(sender: UISegmentedControl) {
-        print(sender.selectedSegmentIndex)
-        segmentIndex = sender.selectedSegmentIndex
-        appDetailTV.reloadData()
+    @IBAction func reviewButtonPressed(sender: AnyObject) {
+        
     }
+    
+    @IBAction func writeReviewButtonPressed(sender: AnyObject) {
+    }
+    
+    @IBAction func appSupportButtonPressed(sender: AnyObject) {
+    }
+    
 }
 
 
 extension AppDetailViewController: UITableViewDelegate, UITableViewDataSource {
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 4
-    }
-    
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
-    }
-    
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         switch segmentIndex {
         case 0:
             /********************* Details Page *********************/
-            switch indexPath.section {
-            case 0, 2, 3:
-                let cell = tableView.dequeueReusableCellWithIdentifier("SubltitleTableCell") as! SubltitleTableCell
-                configureCells(cell, indexPath: indexPath)
-                return cell
-            case 1:
-                let cell = tableView.dequeueReusableCellWithIdentifier("ScreensTableCell") as! ScreensTableCell
-                cell.titleLabel.text = "iPhone"
-                cell.imageCollections.dataSource = self
-                cell.imageCollections.delegate = self
-                return cell
-            default:
-                return UITableViewCell()
-            }
+            return 4
         case 1:
             /********************* Reviews Page *********************/
-            return UITableViewCell()
-            
+            return 3
         case 2:
             /********************* Related Page *********************/
-            return UITableViewCell()
-            
+            return 1
         default:
-            return UITableViewCell()
+            return 0
         }
-        
-        
     }
     
-    func tableView(tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
-        createSectionHeaderView(view)
-    }
-    
-    func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return section == 0 ? 40: 0
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        switch segmentIndex {
+        case 0:
+            /********************* Details Page *********************/
+            return 1
+        case 1:
+            /********************* Reviews Page *********************/
+            return section == 2 ? 5:1
+        case 2:
+            /********************* Related Page *********************/
+            return 0
+        default:
+            return 0
+        }
     }
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
@@ -124,9 +107,19 @@ extension AppDetailViewController: UITableViewDelegate, UITableViewDataSource {
             default:
                 return 0
             }
+            
         case 1:
             /********************* Reviews Page *********************/
-            return 0
+            switch indexPath.section {
+            case 0:
+                return 210
+            case 1:
+                return 80
+            case 2:
+                return 140
+            default:
+                return 0
+            }
             
         case 2:
             /********************* Related Page *********************/
@@ -136,6 +129,59 @@ extension AppDetailViewController: UITableViewDelegate, UITableViewDataSource {
             return 0
         }
     }
+    
+//    func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+//        return section == 0 ? 50: 0
+//    }
+//    
+//    func tableView(tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+//        createSectionHeaderView(view)
+//    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        switch segmentIndex {
+        case 0:
+            /********************* Details Page *********************/
+            switch indexPath.section {
+            case 0, 2, 3:
+                let cell = tableView.dequeueReusableCellWithIdentifier("SubltitleTableCell") as! SubltitleTableCell
+                configureDetailsCells(cell, indexPath: indexPath)
+                return cell
+            case 1:
+                let cell = tableView.dequeueReusableCellWithIdentifier("ScreensTableCell") as! ScreensTableCell
+                cell.titleLabel.text = "iPhone"
+                cell.imageCollections.dataSource = self
+                cell.imageCollections.delegate = self
+                return cell
+            default:
+                return UITableViewCell()
+            }
+        case 1:
+            /********************* Reviews Page *********************/
+            switch indexPath.section {
+            case 0:
+                let cell = tableView.dequeueReusableCellWithIdentifier("RatingReviewTableCell") as! RatingReviewTableCell
+                return cell
+            case 1:
+                let cell = tableView.dequeueReusableCellWithIdentifier("CustomerButtonTableCell") as! CustomerButtonTableCell
+                return cell
+            case 2:
+                let cell = tableView.dequeueReusableCellWithIdentifier("CustomerReviewsTableCell") as! CustomerReviewsTableCell
+                return cell
+            default:
+            return UITableViewCell()
+            }
+        case 2:
+            /********************* Related Page *********************/
+            return UITableViewCell()
+            
+        default:
+            return UITableViewCell()
+        }
+        
+        
+    }
+ 
 }
 
 extension AppDetailViewController: UICollectionViewDataSource, UICollectionViewDelegate {
@@ -154,9 +200,20 @@ extension AppDetailViewController: UICollectionViewDataSource, UICollectionViewD
     }
 }
 
+extension AppDetailViewController: UIScrollViewDelegate {
+    func scrollViewDidScroll(scrollView: UIScrollView) {
+        print(appDetailTV.contentOffset.y)
+        if appDetailTV.contentOffset.y >= 125 {
+            segmentControllerTopSpace.constant = 0
+        } else if appDetailTV.contentOffset.y < 125 {
+            segmentControllerTopSpace.constant = 124 - appDetailTV.contentOffset.y
+        }
+    }
+}
+
 // Helper methods
 extension AppDetailViewController {
-    func configureCells(cell: UITableViewCell, indexPath: NSIndexPath) {
+    func configureDetailsCells(cell: UITableViewCell, indexPath: NSIndexPath) {
         let cell = cell as! SubltitleTableCell
         switch indexPath.section {
         case 0:
@@ -169,17 +226,27 @@ extension AppDetailViewController {
             cell.descriptionLabel.text = "The Clan Description is the one and only thing new members and potential recruits will see. You can set up your basic rules in there and you don’t have to send them via Clan Message all the time. Let’s say you’re currently looking for a new Clan and you come across various Clans and you read the description. Which of the following Clans would you rather join?"
         case 3:
             cell.titleLabel.numberOfLines = 2
-            
-            let text1 = NSMutableAttributedString(string: "What's New\n02-Nov-2016")
-            text1.addAttribute(NSForegroundColorAttributeName, value: UIColor.darkGrayColor(), range: NSRange(location:10,length:12))
-            
-            cell.titleLabel.attributedText = text1
+            let date = "02-Nov-2016"
+            let text = NSMutableAttributedString(string: "What's New\n\(date)")
+            text.addAttribute(NSForegroundColorAttributeName, value: UIColor.darkGrayColor(), range: NSRange(location:10,length:12))
+            cell.titleLabel.attributedText = text
             cell.descriptionLabel.text = "* This version contains stability improvements and general bug fixes."
         default:
             break
         }
     }
     
+    func configureReviewPageCell(cell: UITableViewCell, indexPath: NSIndexPath) {
+        switch indexPath.section {
+        case 0:
+            let cell = cell as! RatingReviewTableCell
+            
+        default:
+            break
+        }
+    }
+    
+    /*
     func calculateLines(label: UILabel) {
         // calculating number of lines
         let textSize = CGSizeMake(label.frame.size.width, CGFloat(Float.infinity))
@@ -192,11 +259,12 @@ extension AppDetailViewController {
         } else {
             var attributedString = NSMutableAttributedString(string: " ...Read More")
             attributedString.addAttribute(NSForegroundColorAttributeName, value: UIColor.blueColor(), range: NSRange(location:0,length:13))
+            var mutableString: String = label.text!
+            var trimmedString = mutableString.stringByReplacingCharactersInRange(NSMakeRange(<#T##loc: Int##Int#>, <#T##len: Int##Int#>), withString: <#T##String#>)
             
         }
     }
-    
-    /*
+     
     func addReadMoreStringToUILabel(label: UILabel) {
         var readMoreText = " ...Read More"
         var lengthForString = label.text!.characters.count

@@ -18,3 +18,17 @@ class ScreensTableCell: UITableViewCell {
     @IBOutlet weak var imageCollections: UICollectionView!
     
 }
+
+class RatingReviewTableCell: UITableViewCell {
+    @IBOutlet weak var segementController: UISegmentedControl!
+}
+
+class CustomerButtonTableCell: UITableViewCell {
+    
+}
+
+class CustomerReviewsTableCell: UITableViewCell {
+    @IBOutlet weak var reviewTitle: UILabel!
+    @IBOutlet weak var user_date: UILabel!
+    @IBOutlet weak var review: UILabel!
+}
