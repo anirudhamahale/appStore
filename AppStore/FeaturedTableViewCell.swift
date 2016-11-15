@@ -14,6 +14,11 @@ class FeaturedTableViewCell: UITableViewCell {
     @IBOutlet weak var seeAllButton: UIButton!
     
     @IBOutlet weak var collectionView: UICollectionView!
+    
+    var collectionViewOffset: CGFloat {
+        set { collectionView.contentOffset.x = newValue }
+        get { return collectionView.contentOffset.x }
+    }
 }
 
 extension FeaturedTableViewCell: UICollectionViewDelegate, UICollectionViewDataSource {
@@ -33,5 +38,32 @@ extension FeaturedTableViewCell: UICollectionViewDelegate, UICollectionViewDataS
         return cell
     }
 }
+
+class FeaturedListTableCell: UITableViewCell {
+    @IBOutlet weak var appIcon: UIImageView!
+    @IBOutlet weak var getButton: UIButton!
+    @IBOutlet weak var appName: UILabel!
+    @IBOutlet weak var category: UILabel!
+    @IBOutlet weak var status: UILabel!
+    @IBOutlet weak var reviews: UILabel!
+    @IBOutlet weak var starView: UIView!
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 

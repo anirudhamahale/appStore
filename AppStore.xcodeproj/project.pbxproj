@@ -29,6 +29,7 @@
 		BCADB4CA1DC8841100425D99 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCADB4C91DC8841100425D99 /* Config.swift */; };
 		BCADB4CC1DC8842800425D99 /* AppData.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCADB4CB1DC8842800425D99 /* AppData.swift */; };
 		BCB89E971DDADDD10039ABB6 /* FeatureBannerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCB89E961DDADDD10039ABB6 /* FeatureBannerTableViewCell.swift */; };
+		BCB89E991DDB1EEA0039ABB6 /* FeaturedListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCB89E981DDB1EEA0039ABB6 /* FeaturedListViewController.swift */; };
 		BCBA2A2B1DD315370094546C /* FavouriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCBA2A2A1DD315370094546C /* FavouriteViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -57,6 +58,7 @@
 		BCADB4C91DC8841100425D99 /* Config.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		BCADB4CB1DC8842800425D99 /* AppData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppData.swift; sourceTree = "<group>"; };
 		BCB89E961DDADDD10039ABB6 /* FeatureBannerTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeatureBannerTableViewCell.swift; sourceTree = "<group>"; };
+		BCB89E981DDB1EEA0039ABB6 /* FeaturedListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeaturedListViewController.swift; sourceTree = "<group>"; };
 		BCBA2A2A1DD315370094546C /* FavouriteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavouriteViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -112,11 +114,11 @@
 		BCADB4C31DC8837100425D99 /* TableViewCells */ = {
 			isa = PBXGroup;
 			children = (
-				BCADB4C11DC8813200425D99 /* TopChartsTableViewCell.swift */,
-				BC7B44ED1DCC883900EFF968 /* CategoriesTableViewCell.swift */,
 				8FB049221DD8374F0001AAFB /* AppDetailTVC.swift */,
-				BC2D9B931DC9C84600F07007 /* FeaturedTableViewCell.swift */,
+				BC7B44ED1DCC883900EFF968 /* CategoriesTableViewCell.swift */,
 				BCB89E961DDADDD10039ABB6 /* FeatureBannerTableViewCell.swift */,
+				BC2D9B931DC9C84600F07007 /* FeaturedTableViewCell.swift */,
+				BCADB4C11DC8813200425D99 /* TopChartsTableViewCell.swift */,
 				BC5C5DB51DD6F87500005B42 /* UpdatesTableViewCell.swift */,
 			);
 			name = TableViewCells;
@@ -125,15 +127,16 @@
 		BCADB4C41DC8838100425D99 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				BC0BB3851DC763580003EE02 /* UpdatesViewController.swift */,
-				BC0BB37F1DC7632B0003EE02 /* TopChartsViewController.swift */,
 				8FB049201DD834470001AAFB /* AppDetailViewController.swift */,
-				BCBA2A2A1DD315370094546C /* FavouriteViewController.swift */,
-				BC0BB3831DC7634B0003EE02 /* SearchViewController.swift */,
 				BC0BB3811DC7633C0003EE02 /* CategoriesViewController.swift */,
+				BCBA2A2A1DD315370094546C /* FavouriteViewController.swift */,
+				BCB89E981DDB1EEA0039ABB6 /* FeaturedListViewController.swift */,
 				BC0BB37D1DC763190003EE02 /* FeaturedViewController.swift */,
-				BC0BB36D1DC75D5B0003EE02 /* ViewController.swift */,
+				BC0BB3831DC7634B0003EE02 /* SearchViewController.swift */,
+				BC0BB37F1DC7632B0003EE02 /* TopChartsViewController.swift */,
 				BC1699211DD70BD4006BE9B6 /* UpdatesOneViewController.swift */,
+				BC0BB3851DC763580003EE02 /* UpdatesViewController.swift */,
+				BC0BB36D1DC75D5B0003EE02 /* ViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -241,6 +244,7 @@
 				BC2D9B941DC9C84600F07007 /* FeaturedTableViewCell.swift in Sources */,
 				BC0BB3841DC7634B0003EE02 /* SearchViewController.swift in Sources */,
 				BC0BB36E1DC75D5B0003EE02 /* ViewController.swift in Sources */,
+				BCB89E991DDB1EEA0039ABB6 /* FeaturedListViewController.swift in Sources */,
 				BCADB4CA1DC8841100425D99 /* Config.swift in Sources */,
 				BCBA2A2B1DD315370094546C /* FavouriteViewController.swift in Sources */,
 				BCADB4C21DC8813200425D99 /* TopChartsTableViewCell.swift in Sources */,

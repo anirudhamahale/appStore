@@ -10,6 +10,11 @@ import UIKit
 
 class FeatureBannerTableViewCell: UITableViewCell {
     @IBOutlet weak var featureCollectionView: UICollectionView!
+    
+    var collectionViewOffset: CGFloat {
+        set { featureCollectionView.contentOffset.x = newValue }
+        get { return featureCollectionView.contentOffset.x }
+    }
 }
 
 extension FeatureBannerTableViewCell: UICollectionViewDataSource, UICollectionViewDelegate {

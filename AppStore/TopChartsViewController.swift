@@ -15,10 +15,10 @@ class TopChartsViewController: UIViewController, UITableViewDataSource, UITableV
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         let navBar = navigationController!.navigationBar
         navBar.setBackgroundImage(UIImage(), forBarMetrics: .Default)
         navBar.shadowImage = UIImage()
-        navBar.backgroundColor = UIColor(netHex: 0xF5F5F5)
         
         data = [
             AppDetails(name: "Clash of Clans", category: .Games, image: "angrybirdsspace", downloads: "50000", free: false, price: "250"),

@@ -12,11 +12,23 @@ class FeaturedViewController: UIViewController {
 
     @IBOutlet weak var featuredTableView: UITableView!
     @IBOutlet weak var headerViewTopSpace: NSLayoutConstraint!
+    var storedOffsets = [CGFloat]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        for _ in 0...9 {
+            storedOffsets.append(0)
+        }
         // Do any additional setup after loading the view.
+    }
+    
+    override func preferredStatusBarStyle() -> UIStatusBarStyle {
+        return UIStatusBarStyle.LightContent
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        self.setNeedsStatusBarAppearanceUpdate()
+        super.viewDidAppear(animated)
     }
     
     @IBAction func favouriteButtonPressed(sender: AnyObject) {
@@ -26,11 +38,14 @@ class FeaturedViewController: UIViewController {
 
     @IBAction func seeAllButtonPressed(sender: AnyObject) {
         print(sender.tag)
+        self.performSegueWithIdentifier("ListFeatured", sender: self)
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "ListFeatured" {
+            let vc = FeaturedListViewController()
+            vc.navTitle = "New Apps We Love"
+        }
     }
 }
 
@@ -68,6 +83,28 @@ extension FeaturedViewController: UITableViewDataSource, UITableViewDelegate {
             return cell
         }
     }
+    
+//    func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+//        switch indexPath.row {
+//        case 2,3,6,7:
+//            let cell = featuredTableView.dequeueReusableCellWithIdentifier("FeatureBannerTableViewCell") as! FeatureBannerTableViewCell
+//            cell.collectionViewOffset = storedOffsets[indexPath.row] ?? 0
+//        default:
+//            let cell = featuredTableView.dequeueReusableCellWithIdentifier("FeaturedTableViewCell") as! FeaturedTableViewCell
+//            cell.collectionViewOffset = storedOffsets[indexPath.row] ?? 0
+//        }
+//    }
+    
+//    func tableView(tableView: UITableView, didEndDisplayingCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+//        switch indexPath.row {
+//        case 2,3,6,7:
+//            let cell = featuredTableView.dequeueReusableCellWithIdentifier("FeatureBannerTableViewCell") as! FeatureBannerTableViewCell
+//            storedOffsets[indexPath.row] = cell.collectionViewOffset
+//        default:
+//            let cell = featuredTableView.dequeueReusableCellWithIdentifier("FeaturedTableViewCell") as! FeaturedTableViewCell
+//            storedOffsets[indexPath.row] = cell.collectionViewOffset
+//        }
+//    }
 }
 
 extension FeaturedViewController {
