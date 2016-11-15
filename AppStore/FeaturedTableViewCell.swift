@@ -14,16 +14,24 @@ class FeaturedTableViewCell: UITableViewCell {
     @IBOutlet weak var seeAllButton: UIButton!
     
     @IBOutlet weak var collectionView: UICollectionView!
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-
-    override func setSelected(selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
-
 }
+
+extension FeaturedTableViewCell: UICollectionViewDelegate, UICollectionViewDataSource {
+    func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
+        return 1
+    }
+    
+    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 9
+    }
+    
+    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("FeaturedCollectionViewCell", forIndexPath: indexPath) as! FeaturedCollectionViewCell
+        cell.appImage.image = UIImage(named: "clashroyale")
+        cell.appName.text = "Clash Of Royale"
+        cell.appCategory.text = "Games"
+        return cell
+    }
+}
+
+

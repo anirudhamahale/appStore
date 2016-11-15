@@ -24,6 +24,10 @@ class FeaturedViewController: UIViewController {
         self.presentViewController(vc, animated: true, completion: nil)
     }
 
+    @IBAction func seeAllButtonPressed(sender: AnyObject) {
+        print(sender.tag)
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -35,36 +39,34 @@ extension FeaturedViewController: UITableViewDataSource, UITableViewDelegate {
         return 1
     }
     
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        switch indexPath.row {
+        case 2,3,6,7:
+            return 127
+        default:
+            return 225
+        }
+    }
+    
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 10
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = featuredTableView.dequeueReusableCellWithIdentifier("FeaturedTableViewCell") as! FeaturedTableViewCell
-        cell.FeatureTitle.text = "New Games We Love"
-        cell.seeAllButton.tag = indexPath.row
-        cell.collectionView.dataSource = self
-        cell.collectionView.delegate = self
-        return cell
-    }
-
-}
-
-extension FeaturedViewController: UICollectionViewDataSource, UICollectionViewDelegate {
-    func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
-        return 1
-    }
-    
-    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
-    }
-    
-    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("FeaturedCollectionViewCell", forIndexPath: indexPath) as! FeaturedCollectionViewCell
-        cell.appImage.image = UIImage(named: "clashroyale")
-        cell.appName.text = "Clash Of Royale"
-        cell.appCategory.text = "Games"
-        return cell
+        switch indexPath.row {
+        case 2,3,6,7:
+            let cell = featuredTableView.dequeueReusableCellWithIdentifier("FeatureBannerTableViewCell") as! FeatureBannerTableViewCell
+            cell.featureCollectionView.dataSource = cell
+            cell.featureCollectionView.delegate = cell
+            return cell
+        default:
+            let cell = featuredTableView.dequeueReusableCellWithIdentifier("FeaturedTableViewCell") as! FeaturedTableViewCell
+            cell.FeatureTitle.text = "New Games We Love"
+            cell.seeAllButton.tag = indexPath.row
+            cell.collectionView.dataSource = cell
+            cell.collectionView.delegate = cell
+            return cell
+        }
     }
 }
 

@@ -14,3 +14,9 @@ class FeaturedCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var appCategory: UILabel!
     
 }
+
+class FeaturedBannerCollectionCell: UICollectionViewCell {
+
+    @IBOutlet weak var bannerImage: UIImageView!
+
+}
