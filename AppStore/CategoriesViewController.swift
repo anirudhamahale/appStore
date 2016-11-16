@@ -81,8 +81,18 @@ extension CategoriesViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        self.performSegueWithIdentifier("showCategory", sender: indexPath)
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "showCategory" {
+            let indexPath = sender as! NSIndexPath
+            let vc = segue.destinationViewController as! CategoryListViewController
+            vc.navBarName = categories[indexPath.section][indexPath.row]
+        }
     }
 }
+
 
 
 

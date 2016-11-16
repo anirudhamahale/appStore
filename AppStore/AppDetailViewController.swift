@@ -30,12 +30,12 @@ class AppDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        appName.text = appName1
         segmentController.addTarget(self, action: #selector(AppDetailViewController.changeValueForSegment(_:)), forControlEvents: .ValueChanged)
     }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
+        appName.text = appName1
         removeNavigationBarBottomLine(false, self: self)
     }
     
@@ -205,6 +205,14 @@ extension AppDetailViewController: UICollectionViewDataSource, UICollectionViewD
         }
         
     }
+    
+    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        let vc = storyboard!.instantiateViewControllerWithIdentifier("AppDetailViewController") as! AppDetailViewController
+        vc.appName1 = "Clash of Clans"
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    
 }
 
 extension AppDetailViewController: UIScrollViewDelegate {
