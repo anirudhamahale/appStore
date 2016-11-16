@@ -13,6 +13,8 @@ class FeaturedTableViewCell: UITableViewCell {
     @IBOutlet weak var FeatureTitle: UILabel!
     @IBOutlet weak var seeAllButton: UIButton!
     
+    var featuredViewControllerDelegate: FeaturedViewController?
+    
     @IBOutlet weak var collectionView: UICollectionView!
     
     var collectionViewOffset: CGFloat {
@@ -36,6 +38,12 @@ extension FeaturedTableViewCell: UICollectionViewDelegate, UICollectionViewDataS
         cell.appName.text = "Clash Of Royale"
         cell.appCategory.text = "Games"
         return cell
+    }
+    
+    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        let storyboard = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
+        let vc = storyboard.instantiateViewControllerWithIdentifier("AppDetailViewController") as! AppDetailViewController
+        featuredViewControllerDelegate!.navigationController?.pushViewController(vc, animated: true)
     }
 }
 

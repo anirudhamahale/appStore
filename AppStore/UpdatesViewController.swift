@@ -17,6 +17,10 @@ class UpdatesViewController: UIViewController {
 
         // Do any additional setup after loading the view.
     }
+    
+    @IBAction func updateAllButtonPressed(sender: AnyObject) {
+        print("updating your apps")
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

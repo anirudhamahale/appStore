@@ -66,3 +66,13 @@ extension UIColor { //UIColor(netHex: 0x297AFE)
         self.init(red:(netHex >> 16) & 0xff, green:(netHex >> 8) & 0xff, blue:netHex & 0xff)
     }
 }
+
+func removeNavigationBarBottomLine(remove: Bool, self: UIViewController) {
+    for parent in self.navigationController!.navigationBar.subviews {
+        for childView in parent.subviews {
+            if(childView is UIImageView) {
+                childView.alpha = remove ? 0.0 : 1.0
+            }
+        }
+    }
+}

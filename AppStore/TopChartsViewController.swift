@@ -13,17 +13,23 @@ class TopChartsViewController: UIViewController, UITableViewDataSource, UITableV
     var data = [AppDetails]()
     @IBOutlet weak var topChartsTableView: UITableView!
     
+    @IBOutlet weak var lineViewHeight: NSLayoutConstraint!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        let navBar = navigationController!.navigationBar
-        navBar.setBackgroundImage(UIImage(), forBarMetrics: .Default)
-        navBar.shadowImage = UIImage()
-        
         data = [
             AppDetails(name: "Clash of Clans", category: .Games, image: "angrybirdsspace", downloads: "50000", free: false, price: "250"),
             AppDetails(name: "Clash of Royals", category: .Games, image: "clashroyale", downloads: "10091", free: true, price: "150")
         ]
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        removeNavigationBarBottomLine(true, self: self)
+    }
+    
+    override func viewDidLayoutSubviews() {
+        lineViewHeight.constant = 0.5
     }
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {

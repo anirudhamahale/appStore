@@ -22,24 +22,22 @@ class AppDetailViewController: UIViewController {
     @IBOutlet weak var appDetailTV: UITableView!
     @IBOutlet weak var segmentController: UISegmentedControl!
     
+    @IBOutlet weak var segmentControllerView: UIView!
     @IBOutlet weak var segmentControllerTopSpace: NSLayoutConstraint!
     var segmentIndex = 0
     
+    var appName1 = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        appName.text = appName1
         segmentController.addTarget(self, action: #selector(AppDetailViewController.changeValueForSegment(_:)), forControlEvents: .ValueChanged)
     }
-
-//    func createSectionHeaderView(view: UIView) {
-//        let sectionView = view as! UITableViewHeaderFooterView
-//        sectionView.contentView.backgroundColor = UIColor.whiteColor()
-//        sectionView.contentView.alpha = 0.8
-//        segmentController.frame = CGRect(x: 10, y: 10, width: sectionView.contentView.bounds.width - 20, height: sectionView.contentView.bounds.height - 20)
-//        lineView.frame = CGRect(x: 0, y: sectionView.contentView.bounds.height - 1, width: sectionView.contentView.bounds.width, height: 1)
-//        
-//        sectionView.contentView.addSubview(segmentController)
-//        sectionView.contentView.addSubview(lineView)
-//    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        removeNavigationBarBottomLine(false, self: self)
+    }
     
     @IBAction func changeValueForSegment(sender: UISegmentedControl) {
         segmentIndex = sender.selectedSegmentIndex
@@ -213,8 +211,10 @@ extension AppDetailViewController: UIScrollViewDelegate {
     func scrollViewDidScroll(scrollView: UIScrollView) {
         if appDetailTV.contentOffset.y >= 125 {
             segmentControllerTopSpace.constant = 0
+            segmentControllerView.backgroundColor = UIColor(netHex: 0xF5F5F5)
         } else if appDetailTV.contentOffset.y < 125 {
             segmentControllerTopSpace.constant = 124 - appDetailTV.contentOffset.y
+            segmentControllerView.backgroundColor = UIColor.clearColor()
         }
     }
 }

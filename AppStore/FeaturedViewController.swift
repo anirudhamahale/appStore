@@ -22,13 +22,9 @@ class FeaturedViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-    override func preferredStatusBarStyle() -> UIStatusBarStyle {
-        return UIStatusBarStyle.LightContent
-    }
-    
-    override func viewDidAppear(animated: Bool) {
-        self.setNeedsStatusBarAppearanceUpdate()
-        super.viewDidAppear(animated)
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        removeNavigationBarBottomLine(false, self: self)
     }
     
     @IBAction func favouriteButtonPressed(sender: AnyObject) {
@@ -43,7 +39,7 @@ class FeaturedViewController: UIViewController {
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "ListFeatured" {
-            let vc = FeaturedListViewController()
+            let vc = segue.destinationViewController as! FeaturedListViewController
             vc.navTitle = "New Apps We Love"
         }
     }
@@ -76,6 +72,7 @@ extension FeaturedViewController: UITableViewDataSource, UITableViewDelegate {
             return cell
         default:
             let cell = featuredTableView.dequeueReusableCellWithIdentifier("FeaturedTableViewCell") as! FeaturedTableViewCell
+            cell.featuredViewControllerDelegate = self
             cell.FeatureTitle.text = "New Games We Love"
             cell.seeAllButton.tag = indexPath.row
             cell.collectionView.dataSource = cell

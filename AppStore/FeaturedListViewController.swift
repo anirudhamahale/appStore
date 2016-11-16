@@ -16,17 +16,25 @@ class FeaturedListViewController: UIViewController {
     var segmnetIndex = 0
     var navTitle = ""
     
+    @IBOutlet weak var lineViewHeight: NSLayoutConstraint!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        let navBar = navigationController!.navigationBar
-        navBar.setBackgroundImage(UIImage(), forBarMetrics: .Default)
-        navBar.shadowImage = UIImage()
-//        UIApplication.sharedApplication().statusBarStyle = UIStatusBarStyle.LightContent
         self.title = navTitle
+//        UIApplication.sharedApplication().statusBarStyle = UIStatusBarStyle.LightContent
     }
     
     @IBAction func segementButtonPressed(sender: AnyObject) {
         
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        removeNavigationBarBottomLine(true, self: self)
+    }
+    
+    override func viewDidLayoutSubviews() {
+        lineViewHeight.constant = 0.5
     }
 
     override func didReceiveMemoryWarning() {
@@ -48,6 +56,13 @@ extension FeaturedListViewController: UITableViewDataSource, UITableViewDelegate
         let cell = tableView.dequeueReusableCellWithIdentifier("FeaturedListTableCell") as! FeaturedListTableCell
         cell.getButton.layer.borderColor = UIColor(netHex: 0x007aff).CGColor
         return cell
+    }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        let vc = storyboard?.instantiateViewControllerWithIdentifier("AppDetailViewController") as! AppDetailViewController
+        vc.appName1 = "Clash of Clans"
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 
 }

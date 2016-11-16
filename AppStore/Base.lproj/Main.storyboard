@@ -376,7 +376,7 @@
                                             <segment title="Top Grossing"/>
                                         </segments>
                                     </segmentedControl>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lHO-gS-cSj">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lHO-gS-cSj" userLabel="lineView">
                                         <rect key="frame" x="-1" y="37" width="376" height="1"/>
                                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
@@ -562,6 +562,7 @@ Purchase</string>
                     </navigationItem>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <connections>
+                        <outlet property="lineViewHeight" destination="eKc-iy-C1D" id="urt-VE-wbv"/>
                         <outlet property="topChartsTableView" destination="nWU-Us-Uf0" id="bbE-kq-hpO"/>
                         <segue destination="h99-a3-3yM" kind="show" identifier="showApp" id="9zb-nj-fe1"/>
                     </connections>
@@ -677,7 +678,7 @@ Purchase</string>
         <!--App Detail View Controller-->
         <scene sceneID="NV7-3X-ACv">
             <objects>
-                <viewController automaticallyAdjustsScrollViewInsets="NO" id="h99-a3-3yM" customClass="AppDetailViewController" customModule="AppStore" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AppDetailViewController" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="h99-a3-3yM" customClass="AppDetailViewController" customModule="AppStore" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="HV8-S7-Tk6"/>
                         <viewControllerLayoutGuide type="bottom" id="gJt-B2-Tbf"/>
@@ -1146,7 +1147,7 @@ Purchase</string>
                                         <color key="tintColor" name="controlShadowColor" catalog="System" colorSpace="catalog"/>
                                     </segmentedControl>
                                 </subviews>
-                                <color key="backgroundColor" red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstItem="MOJ-63-Zzf" firstAttribute="width" secondItem="67e-qH-ZmO" secondAttribute="width" multiplier="0.9" id="Hst-nw-rSF"/>
                                     <constraint firstItem="MOJ-63-Zzf" firstAttribute="centerY" secondItem="67e-qH-ZmO" secondAttribute="centerY" id="biX-xK-7rt"/>
@@ -1179,6 +1180,7 @@ Purchase</string>
                         <outlet property="appStatus" destination="AlA-vZ-OEY" id="aK5-H0-wfS"/>
                         <outlet property="segmentController" destination="MOJ-63-Zzf" id="z37-Do-QBM"/>
                         <outlet property="segmentControllerTopSpace" destination="Uwd-JK-xlU" id="i8t-IJ-RsN"/>
+                        <outlet property="segmentControllerView" destination="67e-qH-ZmO" id="zYQ-gE-pxS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lLT-zE-wQb" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1399,7 +1401,13 @@ Purchase</string>
                             <constraint firstAttribute="trailing" secondItem="2Af-jS-sT3" secondAttribute="trailing" id="bT4-d4-0SV"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Updates" id="B4Y-7R-OVf"/>
+                    <navigationItem key="navigationItem" title="Updates" id="B4Y-7R-OVf">
+                        <barButtonItem key="rightBarButtonItem" title="Update All" id="kRk-mu-bcN">
+                            <connections>
+                                <action selector="updateAllButtonPressed:" destination="JZn-3u-exT" id="fFd-1E-9WA"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="purchasedTableView" destination="2Af-jS-sT3" id="Jup-Bx-X0J"/>
                     </connections>
@@ -1408,7 +1416,7 @@ Purchase</string>
             </objects>
             <point key="canvasLocation" x="694.5" y="1607.5"/>
         </scene>
-        <!--Updates One View Controller-->
+        <!--Purchased-->
         <scene sceneID="BRE-Ww-G9K">
             <objects>
                 <viewController storyboardIdentifier="UpdatesOneViewController" id="gc2-lz-SBn" customClass="UpdatesOneViewController" customModule="AppStore" customModuleProvider="target" sceneMemberID="viewController">
@@ -1535,6 +1543,7 @@ Purchase</string>
                             <constraint firstItem="8iT-yv-d2P" firstAttribute="top" secondItem="XSf-1V-w9v" secondAttribute="bottom" id="z78-RQ-7pD"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Purchased" id="XRe-M3-Hwe"/>
                     <connections>
                         <outlet property="segmentController" destination="5iD-uy-JCK" id="KMG-uC-l58"/>
                         <outlet property="tableView" destination="ATX-a2-dbw" id="9oI-fY-BFw"/>
@@ -1651,7 +1660,7 @@ Purchase</string>
                                             <action selector="segementButtonPressed:" destination="uOi-FS-Iil" eventType="valueChanged" id="apD-x7-Bg1"/>
                                         </connections>
                                     </segmentedControl>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YcI-vw-3Wk">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YcI-vw-3Wk" userLabel="lineView">
                                         <rect key="frame" x="-1" y="37" width="376" height="1"/>
                                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
@@ -1682,6 +1691,7 @@ Purchase</string>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="clashroyale" translatesAutoresizingMaskIntoConstraints="NO" id="G5s-hY-f0v">
                                                     <rect key="frame" x="15" y="17" width="60" height="60"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="60" id="aId-39-oAw"/>
                                                         <constraint firstAttribute="width" secondItem="G5s-hY-f0v" secondAttribute="height" multiplier="1:1" id="l47-Ly-ZbH"/>
@@ -1690,6 +1700,7 @@ Purchase</string>
                                                         <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                                             <integer key="value" value="10"/>
                                                         </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="clipsToBounds" value="YES"/>
                                                     </userDefinedRuntimeAttributes>
                                                 </imageView>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Iza-bQ-qll">
@@ -1824,6 +1835,7 @@ Purchase</string>
                     <navigationItem key="navigationItem" title="New Games We Love" id="ysY-WA-UGQ"/>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <connections>
+                        <outlet property="lineViewHeight" destination="gCk-CS-ncc" id="3Gu-z7-Uy6"/>
                         <outlet property="mainTableView" destination="KEi-d6-Xvh" id="YKW-Es-YA2"/>
                         <outlet property="segementController" destination="0HK-na-jax" id="L8f-lN-wch"/>
                     </connections>

@@ -25,11 +25,17 @@ class SearchViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.titleView = searchBar
+        self.title = "Search"
         // Do any additional setup after loading the view.
     }
+    
     @IBAction func buttonPressed(sender: AnyObject) {
         let button = sender as! UIButton
-        print(button.titleLabel?.text ?? "")
+//        print(button.titleLabel?.text ?? "")
+        
+        let vc = storyboard?.instantiateViewControllerWithIdentifier("AppDetailViewController") as! AppDetailViewController
+        vc.appName1 = button.titleLabel?.text ?? "Star Wars"
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 }
 
