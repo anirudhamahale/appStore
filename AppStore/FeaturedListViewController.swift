@@ -21,6 +21,7 @@ class FeaturedListViewController: UIViewController {
         let navBar = navigationController!.navigationBar
         navBar.setBackgroundImage(UIImage(), forBarMetrics: .Default)
         navBar.shadowImage = UIImage()
+//        UIApplication.sharedApplication().statusBarStyle = UIStatusBarStyle.LightContent
         self.title = navTitle
     }
     

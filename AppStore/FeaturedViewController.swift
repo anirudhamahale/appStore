@@ -84,27 +84,27 @@ extension FeaturedViewController: UITableViewDataSource, UITableViewDelegate {
         }
     }
     
-//    func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
-//        switch indexPath.row {
-//        case 2,3,6,7:
-//            let cell = featuredTableView.dequeueReusableCellWithIdentifier("FeatureBannerTableViewCell") as! FeatureBannerTableViewCell
-//            cell.collectionViewOffset = storedOffsets[indexPath.row] ?? 0
-//        default:
-//            let cell = featuredTableView.dequeueReusableCellWithIdentifier("FeaturedTableViewCell") as! FeaturedTableViewCell
-//            cell.collectionViewOffset = storedOffsets[indexPath.row] ?? 0
-//        }
-//    }
+    func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+        switch indexPath.row {
+        case 2,3,6,7:
+            let cell = featuredTableView.dequeueReusableCellWithIdentifier("FeatureBannerTableViewCell") as! FeatureBannerTableViewCell
+            cell.collectionViewOffset = storedOffsets[indexPath.row] ?? 0
+        default:
+            let cell = featuredTableView.dequeueReusableCellWithIdentifier("FeaturedTableViewCell") as! FeaturedTableViewCell
+            cell.collectionViewOffset = storedOffsets[indexPath.row] ?? 0
+        }
+    }
     
-//    func tableView(tableView: UITableView, didEndDisplayingCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
-//        switch indexPath.row {
-//        case 2,3,6,7:
-//            let cell = featuredTableView.dequeueReusableCellWithIdentifier("FeatureBannerTableViewCell") as! FeatureBannerTableViewCell
-//            storedOffsets[indexPath.row] = cell.collectionViewOffset
-//        default:
-//            let cell = featuredTableView.dequeueReusableCellWithIdentifier("FeaturedTableViewCell") as! FeaturedTableViewCell
-//            storedOffsets[indexPath.row] = cell.collectionViewOffset
-//        }
-//    }
+    func tableView(tableView: UITableView, didEndDisplayingCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+        switch indexPath.row {
+        case 2,3,6,7:
+            let cell = featuredTableView.dequeueReusableCellWithIdentifier("FeatureBannerTableViewCell") as! FeatureBannerTableViewCell
+            storedOffsets[indexPath.row] = cell.collectionViewOffset
+        default:
+            let cell = featuredTableView.dequeueReusableCellWithIdentifier("FeaturedTableViewCell") as! FeaturedTableViewCell
+            storedOffsets[indexPath.row] = cell.collectionViewOffset
+        }
+    }
 }
 
 extension FeaturedViewController {

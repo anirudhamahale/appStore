@@ -217,7 +217,7 @@
                                     <constraint firstAttribute="height" constant="178" id="gHS-Bp-qRB"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ENA-26-Bag">
+                            <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ENA-26-Bag" userLabel="statusBar">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="20"/>
                                 <color key="backgroundColor" red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -560,6 +560,7 @@ Purchase</string>
                             <color key="tintColor" red="0.16078431369999999" green="0.47843137250000001" blue="0.99607843139999996" alpha="1" colorSpace="calibratedRGB"/>
                         </barButtonItem>
                     </navigationItem>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <connections>
                         <outlet property="topChartsTableView" destination="nWU-Us-Uf0" id="bbE-kq-hpO"/>
                         <segue destination="h99-a3-3yM" kind="show" identifier="showApp" id="9zb-nj-fe1"/>
@@ -689,7 +690,7 @@ Purchase</string>
                                 <rect key="frame" x="0.0" y="64" width="375" height="554"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <view key="tableHeaderView" contentMode="scaleToFill" id="Xs0-aK-9a1">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="174"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="starwars" translatesAutoresizingMaskIntoConstraints="NO" id="o9S-nR-QBM">
@@ -747,7 +748,7 @@ Purchase</string>
                                             <state key="normal" title="GET"/>
                                         </button>
                                     </subviews>
-                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    <color key="backgroundColor" red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="calibratedRGB"/>
                                     <constraints>
                                         <constraint firstItem="o9S-nR-QBM" firstAttribute="leading" secondItem="Xs0-aK-9a1" secondAttribute="leading" constant="15" id="4Bv-AC-imu"/>
                                         <constraint firstItem="AlA-vZ-OEY" firstAttribute="top" secondItem="upw-Zz-bb6" secondAttribute="bottom" constant="3" id="EyB-xx-sUH"/>
@@ -771,7 +772,7 @@ Purchase</string>
                                 </view>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="SubltitleTableCell" rowHeight="137" id="561-ge-gw9" customClass="SubltitleTableCell" customModule="AppStore" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="228" width="375" height="137"/>
+                                        <rect key="frame" x="0.0" y="202" width="375" height="137"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="561-ge-gw9" id="Qc9-Na-BXd">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="136"/>
@@ -810,7 +811,7 @@ Purchase</string>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ScreensTableCell" rowHeight="350" id="E4G-WA-ngf" customClass="ScreensTableCell" customModule="AppStore" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="365" width="375" height="350"/>
+                                        <rect key="frame" x="0.0" y="339" width="375" height="350"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="E4G-WA-ngf" id="WaD-pw-PNL">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="349"/>
@@ -873,7 +874,7 @@ Purchase</string>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="RatingReviewTableCell" rowHeight="210" id="r3J-W6-jWB" customClass="RatingReviewTableCell" customModule="AppStore" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="715" width="375" height="210"/>
+                                        <rect key="frame" x="0.0" y="689" width="375" height="210"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="r3J-W6-jWB" id="eRF-OS-csN">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="209"/>
@@ -906,7 +907,7 @@ Purchase</string>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CustomerButtonTableCell" rowHeight="80" id="Isz-L8-ewb" customClass="CustomerButtonTableCell" customModule="AppStore" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="925" width="375" height="80"/>
+                                        <rect key="frame" x="0.0" y="899" width="375" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Isz-L8-ewb" id="tj3-Ij-8be">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="79"/>
@@ -954,7 +955,7 @@ Purchase</string>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CustomerReviewsTableCell" rowHeight="140" id="jd7-bw-oOL" customClass="CustomerReviewsTableCell" customModule="AppStore" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="1005" width="375" height="140"/>
+                                        <rect key="frame" x="0.0" y="979" width="375" height="140"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="jd7-bw-oOL" id="1nh-SQ-XEb">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="139"/>
@@ -1037,7 +1038,7 @@ Purchase</string>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="RelatedTableCell" rowHeight="220" id="70a-5a-KUf" customClass="RelatedTableCell" customModule="AppStore" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="1145" width="375" height="220"/>
+                                        <rect key="frame" x="0.0" y="1119" width="375" height="220"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="70a-5a-KUf" id="fy3-Hw-PLt">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="219"/>
@@ -1145,7 +1146,7 @@ Purchase</string>
                                         <color key="tintColor" name="controlShadowColor" catalog="System" colorSpace="catalog"/>
                                     </segmentedControl>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="MOJ-63-Zzf" firstAttribute="width" secondItem="67e-qH-ZmO" secondAttribute="width" multiplier="0.9" id="Hst-nw-rSF"/>
                                     <constraint firstItem="MOJ-63-Zzf" firstAttribute="centerY" secondItem="67e-qH-ZmO" secondAttribute="centerY" id="biX-xK-7rt"/>
@@ -1165,6 +1166,7 @@ Purchase</string>
                             <constraint firstAttribute="trailing" secondItem="7gS-bs-sGE" secondAttribute="trailing" id="wac-Kp-7B1"/>
                         </constraints>
                     </view>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <connections>
                         <outlet property="appButton" destination="fdS-oP-brT" id="jMA-y8-Dhr"/>
                         <outlet property="appComments" destination="frz-wT-0e5" id="d1W-gp-n0o"/>
@@ -1186,7 +1188,8 @@ Purchase</string>
         <!--Search View Controller-->
         <scene sceneID="DwL-oE-ect">
             <objects>
-                <viewController storyboardIdentifier="SearchViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="4q0-CV-vSs" customClass="SearchViewController" customModule="AppStore" customModuleProvider="target" sceneMemberID="viewController">
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9VS-TY-Udg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController storyboardIdentifier="SearchViewController" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="4q0-CV-vSs" customClass="SearchViewController" customModule="AppStore" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="OYy-S2-IKE"/>
                         <viewControllerLayoutGuide type="bottom" id="RTh-ZV-vDX"/>
@@ -1194,11 +1197,71 @@ Purchase</string>
                     <view key="view" contentMode="scaleToFill" id="6zu-MF-SYy">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="z1N-EM-baa">
+                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <view key="tableHeaderView" contentMode="scaleToFill" id="j4I-YP-mhU">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Trending" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0OO-fN-AyI">
+                                            <rect key="frame" x="37" y="63" width="300" height="27"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <constraints>
+                                        <constraint firstItem="0OO-fN-AyI" firstAttribute="width" secondItem="j4I-YP-mhU" secondAttribute="width" multiplier="0.8" id="8el-CM-8TA"/>
+                                        <constraint firstItem="0OO-fN-AyI" firstAttribute="centerX" secondItem="j4I-YP-mhU" secondAttribute="centerX" id="mPI-gQ-TEl"/>
+                                        <constraint firstAttribute="bottom" secondItem="0OO-fN-AyI" secondAttribute="bottom" constant="10" id="nGd-HI-4gA"/>
+                                    </constraints>
+                                </view>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="SearchTableViewCell" rowHeight="30" id="KnN-Xt-0aM" customClass="SearchTableViewCell" customModule="AppStore" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="128" width="375" height="30"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KnN-Xt-0aM" id="bbK-vw-JFc">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="30"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hav-mq-l0F">
+                                                    <rect key="frame" x="37" y="0.0" width="300" height="30"/>
+                                                    <state key="normal" title="Button"/>
+                                                    <connections>
+                                                        <action selector="buttonPressed:" destination="4q0-CV-vSs" eventType="touchUpInside" id="vmr-yN-FFt"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="Hav-mq-l0F" firstAttribute="width" secondItem="bbK-vw-JFc" secondAttribute="width" multiplier="0.8" id="2ze-hN-NAx"/>
+                                                <constraint firstItem="Hav-mq-l0F" firstAttribute="centerX" secondItem="bbK-vw-JFc" secondAttribute="centerX" id="8dE-TT-nZR"/>
+                                                <constraint firstItem="Hav-mq-l0F" firstAttribute="centerY" secondItem="bbK-vw-JFc" secondAttribute="centerY" id="zXZ-zI-Ya4"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="titleButton" destination="Hav-mq-l0F" id="3ob-eH-EHh"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="4q0-CV-vSs" id="K7i-bz-lN6"/>
+                                    <outlet property="delegate" destination="4q0-CV-vSs" id="YS9-du-n7e"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="z1N-EM-baa" firstAttribute="leading" secondItem="6zu-MF-SYy" secondAttribute="leading" id="11e-Oh-la5"/>
+                            <constraint firstItem="RTh-ZV-vDX" firstAttribute="top" secondItem="z1N-EM-baa" secondAttribute="bottom" id="NgO-rJ-kwz"/>
+                            <constraint firstItem="z1N-EM-baa" firstAttribute="top" secondItem="OYy-S2-IKE" secondAttribute="bottom" id="fqJ-jt-rNv"/>
+                            <constraint firstAttribute="trailing" secondItem="z1N-EM-baa" secondAttribute="trailing" id="su6-US-Ekh"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="OjJ-hQ-Zpd"/>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="9VS-TY-Udg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="244.5" y="1607.5"/>
         </scene>
@@ -1759,6 +1822,7 @@ Purchase</string>
                         </variation>
                     </view>
                     <navigationItem key="navigationItem" title="New Games We Love" id="ysY-WA-UGQ"/>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <connections>
                         <outlet property="mainTableView" destination="KEi-d6-Xvh" id="YKW-Es-YA2"/>
                         <outlet property="segementController" destination="0HK-na-jax" id="L8f-lN-wch"/>
