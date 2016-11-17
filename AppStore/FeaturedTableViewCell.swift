@@ -21,6 +21,15 @@ class FeaturedTableViewCell: UITableViewCell {
     }
 }
 
+class FeatureBannerTableViewCell: UITableViewCell {
+    @IBOutlet weak var collectionView: UICollectionView!
+    
+    var collectionViewOffset: CGFloat {
+        set { collectionView.contentOffset.x = newValue }
+        get { return collectionView.contentOffset.x }
+    }
+}
+
 class FeaturedListTableCell: UITableViewCell {
     @IBOutlet weak var appIcon: UIImageView!
     @IBOutlet weak var getButton: UIButton!
@@ -30,6 +39,8 @@ class FeaturedListTableCell: UITableViewCell {
     @IBOutlet weak var reviews: UILabel!
     @IBOutlet weak var starView: UIView!
 }
+
+
 
 
 
