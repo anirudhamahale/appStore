@@ -67,17 +67,15 @@ extension FeaturedViewController: UITableViewDataSource, UITableViewDelegate {
         switch indexPath.row {
         case 2,3,6,7:
             let cell = featuredTableView.dequeueReusableCellWithIdentifier("FeatureBannerTableViewCell", forIndexPath: indexPath) as! FeatureBannerTableViewCell
-            cell.featureBannerTableViewCellDelegate = self
-            cell.featureCollectionView.dataSource = cell
-            cell.featureCollectionView.delegate = cell
+            cell.collectionView.tag = 2000
+            cell.collectionView.dataSource = self
+            cell.collectionView.delegate = self
             return cell
         default:
             let cell = featuredTableView.dequeueReusableCellWithIdentifier("FeaturedTableViewCell", forIndexPath: indexPath) as! FeaturedTableViewCell
-            cell.featuredViewControllerDelegate = self
-            cell.FeatureTitle.text = "New Games We Love"
-            cell.seeAllButton.tag = indexPath.row
-            cell.collectionView.dataSource = cell
-            cell.collectionView.delegate = cell
+            cell.collectionView.tag = 1000
+            cell.collectionView.dataSource = self
+            cell.collectionView.delegate = self
             return cell
         }
     }
@@ -101,6 +99,46 @@ extension FeaturedViewController: UITableViewDataSource, UITableViewDelegate {
         default:
             let cell = featuredTableView.dequeueReusableCellWithIdentifier("FeaturedTableViewCell") as! FeaturedTableViewCell
             storedOffsets[indexPath.row] = cell.collectionViewOffset
+        }
+    }
+}
+
+extension FeaturedViewController: UICollectionViewDataSource, UICollectionViewDelegate {
+    func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
+        return 1
+    }
+    
+    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        if collectionView.tag == 1000 {
+            return 7
+        } else if collectionView.tag == 2000 {
+            return 4
+        } else {
+            return 0
+        }
+    }
+    
+    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+        if collectionView.tag == 1000 {
+            let cell = collectionView.dequeueReusableCellWithReuseIdentifier("FeaturedCollectionViewCell", forIndexPath: indexPath) as! FeaturedCollectionViewCell
+            return cell
+        } else if collectionView.tag == 2000 {
+            let cell = collectionView.dequeueReusableCellWithReuseIdentifier("FeaturedBannerCollectionCell", forIndexPath: indexPath) as! FeaturedBannerCollectionCell
+            return cell
+        } else {
+            return UICollectionViewCell()
+        }
+    }
+    
+    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        if collectionView.tag == 1000 {
+            let vc = storyboard?.instantiateViewControllerWithIdentifier("AppDetailViewController") as! AppDetailViewController
+            vc.appName1 = "Clash of Clans"
+            self.navigationController?.pushViewController(vc, animated: true)
+        } else if collectionView.tag == 2000 {
+            let vc = storyboard?.instantiateViewControllerWithIdentifier("AppDetailViewController") as! AppDetailViewController
+            vc.appName1 = "dr. Seuss"
+            self.navigationController?.pushViewController(vc, animated: true)
         }
     }
 }

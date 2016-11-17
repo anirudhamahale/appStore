@@ -193,7 +193,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="featureCollectionView" destination="5iE-dK-hHv" id="qgd-6p-owI"/>
+                                            <outlet property="collectionView" destination="5iE-dK-hHv" id="8sQ-Ws-POr"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -1832,7 +1832,7 @@ Purchase</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kUW-ci-yIB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1101.5" y="2390.5"/>
+            <point key="canvasLocation" x="-1107.5" y="2390.5"/>
         </scene>
         <!--Games-->
         <scene sceneID="pNV-TN-q5u">
