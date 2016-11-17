@@ -60,10 +60,6 @@ class TopChartsViewController: UIViewController, UITableViewDataSource, UITableV
         cell.appImage.image = UIImage(named: data[indexPath.row].image)
         cell.appDownloads.text = temp
         cell.appButton.setTitle("₹ " + data[indexPath.row].price, forState: .Normal)
-        cell.appButton.backgroundColor = UIColor.clearColor()
-        cell.appButton.layer.cornerRadius = 5
-        cell.appButton.layer.borderWidth = 1
-        cell.appButton.layer.borderColor = UIColor(netHex: 0x297AFE).CGColor
     }
 
     override func didReceiveMemoryWarning() {

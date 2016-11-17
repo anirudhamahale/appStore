@@ -47,14 +47,28 @@ class AppDetailViewController: UIViewController {
             }, completion: nil)
     }
     
+    @IBAction func shareButtonPressed(sender: AnyObject) {
+        let textToShare = "Swift is awesome!  Check out this website about it!"
+        
+        if let myWebsite = NSURL(string: "http://www.codingexplorer.com/") {
+            let objectsToShare = [textToShare, myWebsite]
+            let activityVC = UIActivityViewController(activityItems: objectsToShare, applicationActivities: nil)
+            
+//            activityVC.popoverPresentationController?.sourceView = sender as? UIView
+            self.presentViewController(activityVC, animated: true, completion: nil)
+        }
+    }
+    
     @IBAction func reviewButtonPressed(sender: AnyObject) {
         
     }
     
     @IBAction func writeReviewButtonPressed(sender: AnyObject) {
+        
     }
     
     @IBAction func appSupportButtonPressed(sender: AnyObject) {
+        
     }
     
 }
@@ -219,7 +233,8 @@ extension AppDetailViewController: UIScrollViewDelegate {
     func scrollViewDidScroll(scrollView: UIScrollView) {
         if appDetailTV.contentOffset.y >= 125 {
             segmentControllerTopSpace.constant = 0
-            segmentControllerView.backgroundColor = UIColor(netHex: 0xF5F5F5)
+            segmentControllerView.backgroundColor = UIColor(hexString: "#F5F5F5")
+//            segmentControllerView.backgroundColor = UIColor(netHex: 0xF5F5F5)
         } else if appDetailTV.contentOffset.y < 125 {
             segmentControllerTopSpace.constant = 124 - appDetailTV.contentOffset.y
             segmentControllerView.backgroundColor = UIColor.clearColor()
