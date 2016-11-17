@@ -207,12 +207,12 @@ extension AppDetailViewController: UICollectionViewDataSource, UICollectionViewD
     }
     
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-        let vc = storyboard!.instantiateViewControllerWithIdentifier("AppDetailViewController") as! AppDetailViewController
-        vc.appName1 = "Clash of Clans"
-        self.navigationController?.pushViewController(vc, animated: true)
+        if segmentIndex == 2 {
+            let vc = storyboard!.instantiateViewControllerWithIdentifier("AppDetailViewController") as! AppDetailViewController
+            vc.appName1 = "Clash of Clans"
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
     }
-    
-    
 }
 
 extension AppDetailViewController: UIScrollViewDelegate {

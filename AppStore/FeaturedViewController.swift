@@ -66,12 +66,13 @@ extension FeaturedViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         switch indexPath.row {
         case 2,3,6,7:
-            let cell = featuredTableView.dequeueReusableCellWithIdentifier("FeatureBannerTableViewCell") as! FeatureBannerTableViewCell
+            let cell = featuredTableView.dequeueReusableCellWithIdentifier("FeatureBannerTableViewCell", forIndexPath: indexPath) as! FeatureBannerTableViewCell
+            cell.featureBannerTableViewCellDelegate = self
             cell.featureCollectionView.dataSource = cell
             cell.featureCollectionView.delegate = cell
             return cell
         default:
-            let cell = featuredTableView.dequeueReusableCellWithIdentifier("FeaturedTableViewCell") as! FeaturedTableViewCell
+            let cell = featuredTableView.dequeueReusableCellWithIdentifier("FeaturedTableViewCell", forIndexPath: indexPath) as! FeaturedTableViewCell
             cell.featuredViewControllerDelegate = self
             cell.FeatureTitle.text = "New Games We Love"
             cell.seeAllButton.tag = indexPath.row

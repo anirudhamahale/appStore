@@ -1181,7 +1181,6 @@ Purchase</string>
         <!--Search View Controller-->
         <scene sceneID="DwL-oE-ect">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="9VS-TY-Udg" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="SearchViewController" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="4q0-CV-vSs" customClass="SearchViewController" customModule="AppStore" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="OYy-S2-IKE"/>
@@ -1255,6 +1254,7 @@ Purchase</string>
                     </view>
                     <navigationItem key="navigationItem" id="OjJ-hQ-Zpd"/>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9VS-TY-Udg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="244.5" y="1607.5"/>
         </scene>

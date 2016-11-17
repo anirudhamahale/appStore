@@ -11,6 +11,8 @@ import UIKit
 class FeatureBannerTableViewCell: UITableViewCell {
     @IBOutlet weak var featureCollectionView: UICollectionView!
     
+    var featureBannerTableViewCellDelegate: FeaturedViewController?
+    
     var collectionViewOffset: CGFloat {
         set { featureCollectionView.contentOffset.x = newValue }
         get { return featureCollectionView.contentOffset.x }
@@ -30,4 +32,11 @@ extension FeatureBannerTableViewCell: UICollectionViewDataSource, UICollectionVi
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("FeaturedBannerCollectionCell", forIndexPath: indexPath) as! FeaturedBannerCollectionCell
         return cell
     }
+    
+    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        let storyboard = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
+        let vc = storyboard.instantiateViewControllerWithIdentifier("AppDetailViewController") as! AppDetailViewController
+        featureBannerTableViewCellDelegate!.navigationController?.pushViewController(vc, animated: true)
+    }
+    
 }
