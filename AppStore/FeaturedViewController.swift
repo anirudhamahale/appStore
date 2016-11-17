@@ -16,6 +16,7 @@ class FeaturedViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         for _ in 0...9 {
             storedOffsets.append(0)
         }
