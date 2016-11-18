@@ -12,7 +12,11 @@ class FeaturedViewController: UIViewController {
 
     @IBOutlet weak var featuredTableView: UITableView!
     @IBOutlet weak var headerViewTopSpace: NSLayoutConstraint!
+    
+    @IBOutlet weak var headerView: UIView!
+    
     var storedOffsets = [CGFloat]()
+    var navigationBarOriginalOffset: CGFloat?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,6 +29,7 @@ class FeaturedViewController: UIViewController {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         removeNavigationBarBottomLine(false, self: self)
+        navigationBarOriginalOffset = headerView.frame.origin.y
     }
     
     @IBAction func favouriteButtonPressed(sender: AnyObject) {
@@ -145,13 +150,16 @@ extension FeaturedViewController: UICollectionViewDataSource, UICollectionViewDe
 
 extension FeaturedViewController {
     func scrollViewDidScroll(scrollView: UIScrollView) {
-        if featuredTableView.contentOffset.y >= 0 {
-            headerViewTopSpace.constant = -featuredTableView.contentOffset.y
-            self.view.layoutIfNeeded()
-        } else if featuredTableView.contentOffset.y < 0 {
-            headerViewTopSpace.constant = 0.0
-            self.view.layoutIfNeeded()
-        }
+//        if featuredTableView.contentOffset.y >= 0 {
+//            headerViewTopSpace.constant = -featuredTableView.contentOffset.y
+//            self.view.layoutIfNeeded()
+//        } else if featuredTableView.contentOffset.y < 0 {
+//            headerViewTopSpace.constant = 0.0
+//            self.view.layoutIfNeeded()
+//        }
+        
+        print(-min(navigationBarOriginalOffset!, featuredTableView.contentOffset.y))
+        headerView.frame.origin.y = -min(navigationBarOriginalOffset!+60, featuredTableView.contentOffset.y-60)
     }
 }
 

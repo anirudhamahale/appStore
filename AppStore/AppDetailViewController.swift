@@ -234,7 +234,6 @@ extension AppDetailViewController: UIScrollViewDelegate {
         if appDetailTV.contentOffset.y >= 125 {
             segmentControllerTopSpace.constant = 0
             segmentControllerView.backgroundColor = UIColor(hexString: "#F5F5F5")
-//            segmentControllerView.backgroundColor = UIColor(netHex: 0xF5F5F5)
         } else if appDetailTV.contentOffset.y < 125 {
             segmentControllerTopSpace.constant = 124 - appDetailTV.contentOffset.y
             segmentControllerView.backgroundColor = UIColor.clearColor()

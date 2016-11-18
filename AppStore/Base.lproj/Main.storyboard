@@ -239,6 +239,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="featuredTableView" destination="4zH-sf-xBn" id="5dV-Er-K1x"/>
+                        <outlet property="headerView" destination="Q5G-96-cW2" id="bzV-x0-IJA"/>
                         <outlet property="headerViewTopSpace" destination="3Sv-Zy-Tob" id="RFS-NF-B1M"/>
                         <segue destination="uOi-FS-Iil" kind="show" identifier="ListFeatured" id="kfj-WU-0vE"/>
                     </connections>
@@ -1232,7 +1233,7 @@ Purchase</string>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Trending" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0OO-fN-AyI">
                                             <rect key="frame" x="37" y="63" width="300" height="27"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
