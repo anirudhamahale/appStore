@@ -16,6 +16,7 @@ class CategoriesViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        resizeDependingOnDevice(view)
         categoriesTableView.sectionHeaderHeight = 60.0
         // Do any additional setup after loading the view.
     }

@@ -30,6 +30,7 @@ class AppDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        resizeDependingOnDevice(view)
         segmentController.addTarget(self, action: #selector(AppDetailViewController.changeValueForSegment(_:)), forControlEvents: .ValueChanged)
     }
     

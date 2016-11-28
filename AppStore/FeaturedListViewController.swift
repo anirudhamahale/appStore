@@ -20,6 +20,7 @@ class FeaturedListViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        resizeDependingOnDevice(view)
         self.title = navTitle
 //        UIApplication.sharedApplication().statusBarStyle = UIStatusBarStyle.LightContent
     }

@@ -17,6 +17,7 @@ class TopChartsViewController: UIViewController, UITableViewDataSource, UITableV
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        resizeDependingOnDevice(view)
         data = [
             AppDetails(name: "Clash of Clans", category: .Games, image: "angrybirdsspace", downloads: "50000", free: false, price: "250"),
             AppDetails(name: "Clash of Royals", category: .Games, image: "clashroyale", downloads: "10091", free: true, price: "150")
@@ -34,6 +35,10 @@ class TopChartsViewController: UIViewController, UITableViewDataSource, UITableV
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
+    }
+    
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return getCalculatedHeight(94)
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

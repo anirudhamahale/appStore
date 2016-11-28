@@ -16,7 +16,7 @@ class CategoryListViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        resizeDependingOnDevice(view)
         // Do any additional setup after loading the view.
     }
     

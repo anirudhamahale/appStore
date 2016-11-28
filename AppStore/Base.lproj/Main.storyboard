@@ -84,7 +84,7 @@
                                                                         <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="width" secondItem="cyi-wI-epK" secondAttribute="height" multiplier="1:1" id="00k-eZ-Jvj"/>
-                                                                            <constraint firstAttribute="width" constant="100" id="Ppg-Vh-7Da"/>
+                                                                            <constraint firstAttribute="width" constant="100" identifier="width" id="Ppg-Vh-7Da"/>
                                                                         </constraints>
                                                                         <userDefinedRuntimeAttributes>
                                                                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -409,7 +409,7 @@
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="clashroyale" translatesAutoresizingMaskIntoConstraints="NO" id="844-5f-RYu">
                                                     <rect key="frame" x="32" y="17" width="60" height="60"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="60" id="WZ7-Sf-fAp"/>
+                                                        <constraint firstAttribute="height" constant="60" identifier="height" id="WZ7-Sf-fAp"/>
                                                         <constraint firstAttribute="width" secondItem="844-5f-RYu" secondAttribute="height" multiplier="1:1" id="bmD-sC-X3T"/>
                                                     </constraints>
                                                     <userDefinedRuntimeAttributes>
@@ -489,20 +489,20 @@ Purchase</string>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="q0w-FP-PBk" firstAttribute="centerY" secondItem="saH-B9-XZl" secondAttribute="centerY" multiplier="0.7" id="33Z-l7-1Ff"/>
-                                                <constraint firstItem="Mno-QN-cjq" firstAttribute="leading" secondItem="saH-B9-XZl" secondAttribute="leading" constant="12" id="3i9-sh-25A"/>
-                                                <constraint firstItem="q0w-FP-PBk" firstAttribute="leading" secondItem="844-5f-RYu" secondAttribute="trailing" constant="8" id="4gW-ao-Eyg"/>
+                                                <constraint firstItem="Mno-QN-cjq" firstAttribute="leading" secondItem="saH-B9-XZl" secondAttribute="leading" constant="12" identifier="width" id="3i9-sh-25A"/>
+                                                <constraint firstItem="q0w-FP-PBk" firstAttribute="leading" secondItem="844-5f-RYu" secondAttribute="trailing" constant="8" identifier="width" id="4gW-ao-Eyg"/>
                                                 <constraint firstItem="jo7-Kr-4d4" firstAttribute="centerY" secondItem="saH-B9-XZl" secondAttribute="centerY" multiplier="0.9" id="EQ4-GL-9yI"/>
                                                 <constraint firstItem="OOT-9C-BYr" firstAttribute="top" secondItem="jo7-Kr-4d4" secondAttribute="bottom" constant="2" id="F9l-4d-SgM"/>
                                                 <constraint firstItem="dGs-dT-YQo" firstAttribute="top" secondItem="q0w-FP-PBk" secondAttribute="bottom" constant="2" id="L2m-dJ-QTp"/>
                                                 <constraint firstItem="wLL-kv-2Ad" firstAttribute="top" secondItem="dGs-dT-YQo" secondAttribute="bottom" constant="2" id="N8V-LB-oEX"/>
-                                                <constraint firstItem="844-5f-RYu" firstAttribute="leading" secondItem="Mno-QN-cjq" secondAttribute="trailing" constant="12" id="Q5p-r1-ipa"/>
+                                                <constraint firstItem="844-5f-RYu" firstAttribute="leading" secondItem="Mno-QN-cjq" secondAttribute="trailing" constant="12" identifier="width" id="Q5p-r1-ipa"/>
                                                 <constraint firstItem="8MH-je-ZAd" firstAttribute="centerY" secondItem="wLL-kv-2Ad" secondAttribute="centerY" id="S5H-ki-GBM"/>
                                                 <constraint firstItem="844-5f-RYu" firstAttribute="centerY" secondItem="saH-B9-XZl" secondAttribute="centerY" id="SH3-6l-hFb"/>
-                                                <constraint firstAttribute="trailing" secondItem="jo7-Kr-4d4" secondAttribute="trailing" constant="8" id="Y4I-2t-GQo"/>
-                                                <constraint firstItem="8MH-je-ZAd" firstAttribute="leading" secondItem="wLL-kv-2Ad" secondAttribute="trailing" constant="5" id="YaG-JI-Gu6"/>
-                                                <constraint firstItem="jo7-Kr-4d4" firstAttribute="leading" secondItem="q0w-FP-PBk" secondAttribute="trailing" constant="8" id="beV-BM-ffU"/>
+                                                <constraint firstAttribute="trailing" secondItem="jo7-Kr-4d4" secondAttribute="trailing" constant="8" identifier="width" id="Y4I-2t-GQo"/>
+                                                <constraint firstItem="8MH-je-ZAd" firstAttribute="leading" secondItem="wLL-kv-2Ad" secondAttribute="trailing" constant="5" identifier="width" id="YaG-JI-Gu6"/>
+                                                <constraint firstItem="jo7-Kr-4d4" firstAttribute="leading" secondItem="q0w-FP-PBk" secondAttribute="trailing" constant="8" identifier="width" id="beV-BM-ffU"/>
                                                 <constraint firstItem="wLL-kv-2Ad" firstAttribute="leading" secondItem="dGs-dT-YQo" secondAttribute="leading" id="bo2-SD-I0P"/>
-                                                <constraint firstItem="dGs-dT-YQo" firstAttribute="leading" secondItem="844-5f-RYu" secondAttribute="trailing" constant="8" id="g2f-pt-myx"/>
+                                                <constraint firstItem="dGs-dT-YQo" firstAttribute="leading" secondItem="844-5f-RYu" secondAttribute="trailing" constant="8" identifier="width" id="g2f-pt-myx"/>
                                                 <constraint firstItem="Mno-QN-cjq" firstAttribute="centerY" secondItem="saH-B9-XZl" secondAttribute="centerY" id="jgs-BO-Q7r"/>
                                                 <constraint firstItem="OOT-9C-BYr" firstAttribute="centerX" secondItem="jo7-Kr-4d4" secondAttribute="centerX" id="tZ1-El-pdz"/>
                                             </constraints>

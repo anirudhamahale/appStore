@@ -17,6 +17,7 @@ class FavouriteViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        resizeDependingOnDevice(view)
 //        UIApplication.sharedApplication().statusBarStyle = .LightContent
     }
     

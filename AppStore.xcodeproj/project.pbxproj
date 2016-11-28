@@ -23,6 +23,7 @@
 		BC23F54E1DDDD05200E3782F /* extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC23F54D1DDDD05100E3782F /* extensions.swift */; };
 		BC2D9B941DC9C84600F07007 /* FeaturedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC2D9B931DC9C84600F07007 /* FeaturedTableViewCell.swift */; };
 		BC33760F1DCB1E1300079C79 /* FeaturedCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC33760E1DCB1E1300079C79 /* FeaturedCollectionViewCell.swift */; };
+		BC5A79D71DEC0EDB0043219E /* AutoLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC5A79D61DEC0EDB0043219E /* AutoLayout.swift */; };
 		BC5C5DB61DD6F87500005B42 /* UpdatesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC5C5DB51DD6F87500005B42 /* UpdatesTableViewCell.swift */; };
 		BC6EC6211DDC29D5007848E8 /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC6EC6201DDC29D5007848E8 /* SearchTableViewCell.swift */; };
 		BC6EC6251DDC66BC007848E8 /* CategoryListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC6EC6241DDC66BC007848E8 /* CategoryListViewController.swift */; };
@@ -55,6 +56,7 @@
 		BC23F54D1DDDD05100E3782F /* extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = extensions.swift; sourceTree = "<group>"; };
 		BC2D9B931DC9C84600F07007 /* FeaturedTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeaturedTableViewCell.swift; sourceTree = "<group>"; };
 		BC33760E1DCB1E1300079C79 /* FeaturedCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeaturedCollectionViewCell.swift; sourceTree = "<group>"; };
+		BC5A79D61DEC0EDB0043219E /* AutoLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutoLayout.swift; sourceTree = "<group>"; };
 		BC5C5DB51DD6F87500005B42 /* UpdatesTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpdatesTableViewCell.swift; sourceTree = "<group>"; };
 		BC6EC6201DDC29D5007848E8 /* SearchTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchTableViewCell.swift; sourceTree = "<group>"; };
 		BC6EC6241DDC66BC007848E8 /* CategoryListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryListViewController.swift; sourceTree = "<group>"; };
@@ -161,6 +163,7 @@
 		BCADB4C61DC883A600425D99 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				BC5A79D61DEC0EDB0043219E /* AutoLayout.swift */,
 				BC0BB36B1DC75D5B0003EE02 /* AppDelegate.swift */,
 				BC0BB3721DC75D5C0003EE02 /* Assets.xcassets */,
 				BC0BB3771DC75D5C0003EE02 /* Info.plist */,
@@ -262,6 +265,7 @@
 				BC0BB37E1DC763190003EE02 /* FeaturedViewController.swift in Sources */,
 				BC23F54E1DDDD05200E3782F /* extensions.swift in Sources */,
 				BC5C5DB61DD6F87500005B42 /* UpdatesTableViewCell.swift in Sources */,
+				BC5A79D71DEC0EDB0043219E /* AutoLayout.swift in Sources */,
 				BC0BB3821DC7633C0003EE02 /* CategoriesViewController.swift in Sources */,
 				BC33760F1DCB1E1300079C79 /* FeaturedCollectionViewCell.swift in Sources */,
 				BC6EC6251DDC66BC007848E8 /* CategoryListViewController.swift in Sources */,

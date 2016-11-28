@@ -24,6 +24,7 @@ class SearchViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        resizeDependingOnDevice(view)
         self.navigationItem.titleView = searchBar
         self.title = "Search"
         // Do any additional setup after loading the view.
